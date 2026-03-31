@@ -8,7 +8,7 @@
       name="description"
       content="Shalom Guru Foundation - शिक्षा, स्वास्थ्य, सरसफाइ, वातावरण संरक्षण, सामाजिक उत्थान र सामुदायिक सहयोगका लागि समर्पित संस्था।"
     />
-    <link rel="icon" type="image/png" href="images/new-logo.png" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       html { scroll-behavior: smooth; }
@@ -16,16 +16,9 @@
         font-family: Arial, Helvetica, sans-serif;
         background: #f8fafc;
       }
-      .section-title::after {
-        content: "";
-        display: block;
-        width: 86px;
-        height: 4px;
-        border-radius: 999px;
-        margin-top: 14px;
-        background: linear-gradient(90deg, #14532d, #22c55e, #84cc16);
-      }
       .glass { backdrop-filter: blur(14px); }
+      .hero-orb { filter: blur(42px); opacity: .22; }
+      .soft-shadow { box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08); }
       .grid-glow {
         background-image:
           linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
@@ -37,564 +30,285 @@
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-7px); }
       }
-      .hero-orb { filter: blur(42px); opacity: .24; }
-      .soft-shadow { box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08); }
-      .card-shadow { box-shadow: 0 16px 40px rgba(2, 132, 199, 0.06); }
+      details summary::-webkit-details-marker { display: none; }
     </style>
   </head>
 
   <body class="min-h-screen bg-slate-50 text-slate-900">
     <header class="sticky top-0 z-50 border-b border-emerald-100/80 bg-white/90 glass">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#home" class="flex items-center gap-3">
-  <img
-    src="images/new-logo.png"
-    alt="Shalom Guru Foundation Logo"
-    class="h-14 w-14 rounded-2xl object-cover shadow-lg shadow-emerald-200 ring-1 ring-emerald-100"
-  />
-  <div>
-    <p class="text-base font-extrabold leading-tight sm:text-lg">Shalom Guru Foundation</p>
-    <p class="text-xs font-medium text-slate-500 sm:text-sm">Compassion in Action</p>
-  </div>
-</a>
+        <a href="#home" class="flex items-center gap-3 min-w-0">
+          <img
+            src="images/logo.png"
+            alt="Shalom Guru Foundation Logo"
+            class="h-12 w-12 rounded-2xl object-cover shadow-lg shadow-emerald-200 ring-1 ring-emerald-100"
+          />
+          <div class="min-w-0">
+            <p class="truncate text-base font-extrabold leading-tight sm:text-lg">Shalom Guru Foundation</p>
+            <p class="text-xs font-medium text-slate-500 sm:text-sm">Compassion in Action</p>
+          </div>
+        </a>
+
         <nav class="hidden items-center gap-6 lg:flex">
-          <a href="#home" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">गृहपृष्ठ</a>
-          <a href="#about" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">हाम्रो बारेमा</a>
-          <a href="#work" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Work</a>
-          <a href="#projects" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Projects</a>
-          <a href="#team" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Team</a>
-          <a href="#objectives" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">उद्देश्यहरू</a>
-          <a href="#social" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Social</a>
-          <a href="#message-form" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Message</a>
+          <a href="#home" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Home</a>
+          <a href="#about" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">About</a>
+          <a href="#work" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Work</a>
+          <a href="#team" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Team</a>
+          <a href="#objectives" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Objectives</a>
+          <a href="#contact-form" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Contact Form</a>
+          <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Contact</a>
+          <a href="#social" class="text-sm font-semibold text-slate-700 hover:text-emerald-700">Social</a>
         </nav>
 
-        <div class="flex items-center gap-3">
-          <button
-            onclick="openDonateModal()"
-            class="hidden rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-200 transition hover:-translate-y-0.5 hover:bg-red-700 sm:inline-flex"
-          >
-            Donate
-          </button>
-
-          <button
-            id="menuBtn"
-            class="inline-flex items-center justify-center rounded-xl border border-slate-200 p-2 text-slate-700 lg:hidden"
-            aria-label="Open menu"
-            onclick="toggleMobileMenu()"
-          >
-            ☰
-          </button>
-        </div>
+        <button
+          type="button"
+          onclick="toggleMobileMenu()"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 text-slate-700 lg:hidden"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
       </div>
 
       <div id="mobileMenu" class="hidden border-t border-emerald-100 bg-white lg:hidden">
         <div class="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
-          <a href="#home" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">गृहपृष्ठ</a>
-          <a href="#about" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">हाम्रो बारेमा</a>
-          <a href="#work" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Work</a>
-          <a href="#projects" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Projects</a>
-          <a href="#team" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Team</a>
-          <a href="#objectives" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">उद्देश्यहरू</a>
-          <a href="#social" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Social</a>
-          <a href="#message-form" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Message</a>
-          <button
-            onclick="openDonateModal(); closeMobileMenu();"
-            class="mt-3 rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white"
-          >
-            Donate
-          </button>
+          <a href="#home" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Home</a>
+          <a href="#about" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">About</a>
+          <a href="#work" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Our Work</a>
+          <a href="#team" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Executive Committee</a>
+          <a href="#objectives" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Objectives</a>
+          <a href="#contact-form" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Contact Form</a>
+          <a href="#contact" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Contact</a>
+          <a href="#social" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Social Media</a>
         </div>
       </div>
     </header>
 
     <main id="home">
       <section class="relative overflow-hidden bg-slate-950 text-white">
-        <div class="absolute -left-20 top-10 h-72 w-72 rounded-full bg-emerald-500 hero-orb"></div>
+        <div class="absolute -left-16 top-8 h-72 w-72 rounded-full bg-emerald-500 hero-orb"></div>
         <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-lime-400 hero-orb"></div>
         <div class="absolute inset-0 grid-glow opacity-20"></div>
 
-        <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8 lg:py-24">
-          <div>
-            <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-200 sm:text-sm">
-              <span>●</span>
+        <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div class="max-w-4xl">
+            <div class="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-200 sm:text-sm">
               Nepal • Education • Health • Cleanliness • Community
             </div>
 
-            <h1 class="max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 class="mt-6 text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
               Shalom Guru Foundation
             </h1>
 
-            <p class="mt-4 max-w-2xl text-xl font-semibold text-emerald-300 sm:text-2xl">
+            <p class="mt-5 text-xl font-semibold text-emerald-300 sm:text-2xl">
               Humanity Is Our Religion.<br />
               Service Is Our Mission.
             </p>
 
-            <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p class="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
               शिक्षा, स्वास्थ्य, सरसफाइ, वातावरण संरक्षण, सीप विकास, सामाजिक उत्थान र मानव सेवाका माध्यमबाट
               सकारात्मक परिवर्तन ल्याउन समर्पित एक आधुनिक सामाजिक संस्था।
             </p>
 
             <div class="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#work"
-                class="rounded-full bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-900/20 transition hover:-translate-y-0.5 hover:bg-emerald-700"
-              >
-                हाम्रो Work
+              <a href="#about" class="rounded-full bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white hover:bg-emerald-700">
+                Learn More
               </a>
-              <a
-                href="#message-form"
-                class="rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/20"
-              >
+              <a href="#contact-form" class="rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-bold text-white hover:bg-white/20">
                 Contact Us
               </a>
             </div>
 
-            <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <div class="text-2xl font-black text-white">11+</div>
-                <div class="mt-1 text-sm font-medium text-slate-300">उद्देश्यहरू</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <div class="text-2xl font-black text-white">6</div>
-                <div class="mt-1 text-sm font-medium text-slate-300">कार्य क्षेत्र</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <div class="text-2xl font-black text-white">2083</div>
-                <div class="mt-1 text-sm font-medium text-slate-300">Opening Year</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <div class="text-2xl font-black text-white">24/7</div>
-                <div class="mt-1 text-sm font-medium text-slate-300">Support</div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-4 soft-shadow">
-              <div class="rounded-[1.5rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-lime-500 p-8">
-                <div class="flex min-h-[470px] flex-col justify-between">
-                  <div>
-                    <div class="inline-flex rounded-full bg-white/20 px-4 py-2 text-sm font-semibold">
-                      Official Launch Countdown
-                    </div>
-                    <h2 class="mt-6 text-3xl font-black leading-tight sm:text-4xl">
-                      २०८३ बैशाख १ गते
-                    </h2>
-                    <p class="mt-3 text-base leading-7 text-emerald-50">
-                      Official opening countdown for Shalom Guru Foundation.
-                    </p>
-                  </div>
-
-                  <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    <div class="rounded-2xl bg-white/15 p-4 text-center">
-                      <div id="days" class="text-3xl font-black">00</div>
-                      <div class="mt-1 text-xs uppercase tracking-widest">Days</div>
-                    </div>
-                    <div class="rounded-2xl bg-white/15 p-4 text-center">
-                      <div id="hours" class="text-3xl font-black">00</div>
-                      <div class="mt-1 text-xs uppercase tracking-widest">Hours</div>
-                    </div>
-                    <div class="rounded-2xl bg-white/15 p-4 text-center">
-                      <div id="minutes" class="text-3xl font-black">00</div>
-                      <div class="mt-1 text-xs uppercase tracking-widest">Minutes</div>
-                    </div>
-                    <div class="rounded-2xl bg-white/15 p-4 text-center">
-                      <div id="seconds" class="text-3xl font-black">00</div>
-                      <div class="mt-1 text-xs uppercase tracking-widest">Seconds</div>
-                    </div>
-                  </div>
-
-                  <div class="mt-8 grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-2xl bg-white/15 p-4">
-                      <p class="text-xs uppercase tracking-[0.24em] text-emerald-100">Email</p>
-                      <p class="mt-2 break-all text-sm font-bold">shalomgurufoundation@gmail.com</p>
-                    </div>
-                    <div class="rounded-2xl bg-white/15 p-4">
-                      <p class="text-xs uppercase tracking-[0.24em] text-emerald-100">Contact</p>
-                      <p class="mt-2 text-sm font-bold">9766106675</p>
-                    </div>
-                  </div>
+            <div class="mt-10 inline-block rounded-[1.5rem] border border-white/10 bg-white/10 p-5 soft-shadow">
+              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200">Opening Countdown</p>
+              <div class="mt-4 grid grid-cols-4 gap-3 text-center">
+                <div class="rounded-2xl bg-white/10 px-3 py-3">
+                  <div id="days" class="text-2xl font-black">00</div>
+                  <div class="mt-1 text-[10px] uppercase tracking-wider text-slate-300">Days</div>
+                </div>
+                <div class="rounded-2xl bg-white/10 px-3 py-3">
+                  <div id="hours" class="text-2xl font-black">00</div>
+                  <div class="mt-1 text-[10px] uppercase tracking-wider text-slate-300">Hours</div>
+                </div>
+                <div class="rounded-2xl bg-white/10 px-3 py-3">
+                  <div id="minutes" class="text-2xl font-black">00</div>
+                  <div class="mt-1 text-[10px] uppercase tracking-wider text-slate-300">Min</div>
+                </div>
+                <div class="rounded-2xl bg-white/10 px-3 py-3">
+                  <div id="seconds" class="text-2xl font-black">00</div>
+                  <div class="mt-1 text-[10px] uppercase tracking-wider text-slate-300">Sec</div>
                 </div>
               </div>
+              <p class="mt-4 text-sm font-semibold text-emerald-100">Official Opening: २०८३ बैशाख १ गते</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div class="rounded-[2rem] bg-white p-8 ring-1 ring-slate-100 soft-shadow sm:p-10">
-          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">About Foundation</p>
-          <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-            हाम्रो बारेमा
-          </h2>
-          <p class="mt-8 text-base leading-8 text-slate-600 sm:text-lg">
-            <span class="font-bold text-slate-900">Shalom Guru Foundation</span> शिक्षा, स्वास्थ्य, वातावरणीय
-            सरसफाइ, सामाजिक उत्थान, सीप विकास, गरिबी न्यूनीकरण र मानव अधिकारसम्बन्धी जनचेतना फैलाउने उद्देश्यले
-            स्थापना गरिएको संस्था हो। हाम्रो लक्ष्य केवल कार्यक्रम सञ्चालन गर्नु मात्र होइन, समुदायसँग दीर्घकालीन
-            साझेदारी गर्दै दिगो परिवर्तन निर्माण गर्नु हो।
-          </p>
-
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-emerald-100 bg-emerald-50 p-5">
-              <h3 class="text-lg font-extrabold text-emerald-900">Our Mission</h3>
-              <p class="mt-3 text-sm leading-7 text-emerald-900/80">
-                शिक्षा, स्वास्थ्य, सरसफाइ, वातावरण संरक्षण र सामाजिक समावेशीकरणका माध्यमबाट सम्मानजनक र अवसरयुक्त जीवन निर्माण गर्ने।
-              </p>
-            </div>
-            <div class="rounded-2xl border border-lime-100 bg-lime-50 p-5">
-              <h3 class="text-lg font-extrabold text-lime-900">Our Vision</h3>
-              <p class="mt-3 text-sm leading-7 text-lime-900/80">
-                प्रत्येक व्यक्ति, परिवार र समुदायले सुरक्षित, स्वस्थ, सफा र समावेशी वातावरणमा जीवनयापन गर्न सक्ने नेपाल निर्माण गर्नु।
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="bg-white py-16 sm:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Our Work</p>
-          <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-            हाम्रो कार्य क्षेत्र
-          </h2>
-          <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            संस्थाका प्रमुख कार्यहरू समुदायको वास्तविक आवश्यकता, दीर्घकालीन प्रभाव र सामाजिक उत्तरदायित्वलाई ध्यानमा राखेर तयार गरिएको छन्।
-          </p>
-
-          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <div class="rounded-[2rem] border border-slate-100 bg-stone-50 p-7 card-shadow transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-white">
-              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl">📘</div>
-              <h3 class="mt-5 text-xl font-black text-slate-900">शिक्षा सहयोग</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-600">छात्रवृत्ति, शैक्षिक सामग्री, विद्यार्थी सहयोग र शिक्षाबाट वञ्चित समूहमा पहुँच।</p>
-            </div>
-
-            <div class="rounded-[2rem] border border-slate-100 bg-stone-50 p-7 card-shadow transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-white">
-              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl">🩺</div>
-              <h3 class="mt-5 text-xl font-black text-slate-900">स्वास्थ्य तथा कल्याण</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-600">स्वास्थ्य शिविर, क्लिनिक, प्राथमिक उपचार, जाँच र आर्थिक रूपमा विपन्न बिरामीलाई सहयोग।</p>
-            </div>
-
-            <div class="rounded-[2rem] border border-slate-100 bg-stone-50 p-7 card-shadow transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-white">
-              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl">🌿</div>
-              <h3 class="mt-5 text-xl font-black text-slate-900">वातावरण तथा सरसफाइ</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-600">वृक्षारोपण, सरसफाइ अभियान, पानी व्यवस्थापन र स्वस्थ वातावरण निर्माणका कार्यक्रम।</p>
-            </div>
-
-            <div class="rounded-[2rem] border border-slate-100 bg-stone-50 p-7 card-shadow transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-white">
-              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl">🤝</div>
-              <h3 class="mt-5 text-xl font-black text-slate-900">सामुदायिक सहयोग</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-600">विपन्न, सीमान्तकृत तथा सामाजिक विभेदमा परेका व्यक्तिहरूलाई प्रत्यक्ष सहयोग।</p>
-            </div>
-
-            <div class="rounded-[2rem] border border-slate-100 bg-stone-50 p-7 card-shadow transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-white">
-              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl">🛠️</div>
-              <h3 class="mt-5 text-xl font-black text-slate-900">सीप विकास</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-600">निःशुल्क तालिम, आत्मनिर्भरता, रोजगार अवसर र आजीविकासम्बन्धी कार्यक्रम।</p>
-            </div>
-
-            <div class="rounded-[2rem] border border-slate-100 bg-stone-50 p-7 card-shadow transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-white">
-              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl">🏛️</div>
-              <h3 class="mt-5 text-xl font-black text-slate-900">अधिकार र जनचेतना</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-600">मानव अधिकार, कानुन, संविधान, सामाजिक सचेतना र संस्कृति संरक्षणसम्बन्धी कार्यक्रम।</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="py-16 sm:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="rounded-[2rem] bg-slate-900 p-8 text-white soft-shadow sm:p-10">
-            <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Projects</p>
-            <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              Projects Under Maintenance
-            </h2>
-            <p class="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-              हाम्रो Projects section अहिले maintenance मा छ। छिट्टै नयाँ परियोजना विवरण, कार्यक्रम र updates यहाँ उपलब्ध गराइनेछ।
-            </p>
-            <div class="mt-8 inline-flex rounded-full bg-white/10 px-5 py-3 text-sm font-bold text-white">
-              Coming Soon
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="team" class="bg-white py-16 sm:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Executive Committee</p>
-          <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-            कार्यकारी समिति
-          </h2>
-          <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            संस्थाको नेतृत्व, योजना निर्माण र कार्यान्वयनमा संलग्न प्रमुख पदाधिकारीहरू।
-          </p>
-
-          <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
-              <h3 class="text-xl font-black text-slate-900">Dil Bahadur Guruwacharya</h3>
-              <p class="mt-2 font-semibold text-emerald-700">Executive President</p>
-            </div>
-
-            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
-              <h3 class="text-xl font-black text-slate-900">Kumar Mijar</h3>
-              <p class="mt-2 font-semibold text-emerald-700">Executive Vice President</p>
-            </div>
-
-            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
-              <h3 class="text-xl font-black text-slate-900">Ms. Debaki Guruwacharya</h3>
-              <p class="mt-2 font-semibold text-emerald-700">Executive Treasurer</p>
-            </div>
-
-            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
-              <h3 class="text-xl font-black text-slate-900">Samir Mijar</h3>
-              <p class="mt-2 font-semibold text-emerald-700">Executive Secretary</p>
-            </div>
-
-            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
-              <h3 class="text-xl font-black text-slate-900">Ms. Durga Aryal</h3>
-              <p class="mt-2 font-semibold text-emerald-700">Executive Member</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="objectives" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div class="rounded-[2rem] bg-slate-900 px-6 py-10 text-white soft-shadow sm:px-8 md:px-10 lg:px-12">
-          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Objectives</p>
-          <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
-            संस्थाका उद्देश्यहरू
-          </h2>
-          <p class="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            तल उल्लेखित उद्देश्यहरू Shalom Guru Foundation को संस्थागत प्रतिबद्धता र सामाजिक उद्देश्यको आधार हुन्।
-          </p>
-
-          <div class="mt-10 grid gap-4">
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">1</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">आर्थिक रूपमा कमजोर तथा शिक्षाबाट वञ्चित भएका विद्यार्थीहरूलाई छात्रवृत्ति तथा शैक्षिक सहयोग प्रदान गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">2</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">वातावरण सन्तुलन र सरसफाइ प्रवर्द्धन गर्न वृक्षारोपण, खुला नाला व्यवस्थापन, धारा/पानीको व्यवस्था तथा सरसफाइसम्बन्धी कार्यक्रम सञ्चालन गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">3</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">स्वास्थ्य क्लिनिक तथा स्वास्थ्य शिविर सञ्चालन गरी आर्थिक रूपमा विपन्न व्यक्तिहरूलाई स्वास्थ्य परीक्षण र उपचारमा सहयोग गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">4</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">गरिबी न्यूनीकरणसम्बन्धी कार्यक्रमहरू सञ्चालन गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">5</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">शिक्षाको अभाव, आर्थिक विपन्नता तथा सामाजिक विभेदमा परेका व्यक्तिहरूलाई सहयोग गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">6</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">रोगीहरूका लागि खानपान, सरसफाइ तथा सुरक्षासम्बन्धी व्यवस्था मिलाई आर्थिक सहयोग तथा आवश्यक सहयोग उपलब्ध गराउने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">7</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">समाजमा सामाजिक उत्थानका लागि सामाजिक, आर्थिक, सांस्कृतिक तथा जनचेतनामूलक कार्यक्रमहरू सञ्चालन गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">8</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">सामाजिक विकासका लागि विभिन्न निःशुल्क सीपमूलक तालिम प्रदान गरी रोजगारीका अवसर सिर्जना गर्न सहयोग गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">9</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">नेपालको संस्कृतिको जगेर्ना गर्न विभिन्न सांस्कृतिक कार्यक्रमहरू सञ्चालन गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">10</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">समाजमा रहेका विकृति, विसंगति तथा विभिन्न अपराधिक गतिविधिविरुद्ध जनचेतना फैलाउने कार्यक्रम सञ्चालन गर्ने।</p></div>
-            <div class="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 font-black text-white">11</div><p class="pt-1 text-sm leading-7 text-slate-200 sm:text-base">संविधान, ऐन, नियम, कानून, मानव अधिकार तथा नागरिक कर्तव्यसम्बन्धी जनचेतनामूलक कार्यक्रम सञ्चालन गर्ने।</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="social" class="bg-gradient-to-br from-emerald-50 to-lime-50 py-16 sm:py-20">
-        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div class="rounded-[2rem] bg-white p-6 soft-shadow sm:p-8">
-            <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Social Media</p>
-            <h2 class="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-              हामीलाई Social Media मा Follow गर्नुहोस्
-            </h2>
-            <p class="mt-4 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-              Foundation का updates, opening news, campaigns, projects र community activities हेर्नका लागि हाम्रो social handles प्रयोग गर्नुहोस्।
-            </p>
-
-            <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <a href="https://facebook.com/shalomgurufoundation" target="_blank" class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white">
-                <img src="images/facebook.png" alt="Facebook" class="h-10 w-10 rounded-xl object-cover" onerror="this.style.display='none'" />
-                <span class="text-base font-bold text-slate-900">Facebook</span>
-              </a>
-
-              <a href="https://tiktok.com/@shalomgurufoundation" target="_blank" class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white">
-                <img src="images/tiktok.png" alt="TikTok" class="h-10 w-10 rounded-xl object-cover" onerror="this.style.display='none'" />
-                <span class="text-base font-bold text-slate-900">TikTok</span>
-              </a>
-
-              <a href="https://instagram.com/shalomgurufoundation" target="_blank" class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white">
-                <img src="images/insta.png" alt="Instagram" class="h-10 w-10 rounded-xl object-cover" onerror="this.style.display='none'" />
-                <span class="text-base font-bold text-slate-900">Instagram</span>
-              </a>
-
-              <a href="https://youtube.com/@shalomgurufoundation" target="_blank" class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white">
-                <img src="images/youtube.png" alt="YouTube" class="h-10 w-10 rounded-xl object-cover" onerror="this.style.display='none'" />
-                <span class="text-base font-bold text-slate-900">YouTube</span>
-              </a>
-            </div>
-
-            <p class="mt-5 text-sm
-          </div>
-        </div>
-      </section>
-
-      <section id="message-form" class="bg-white py-16 sm:py-20">
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div class="rounded-[2rem] bg-slate-900 p-8 text-white soft-shadow sm:p-10">
-            <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Contact Form</p>
-            <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              हामीलाई सन्देश पठाउनुहोस्
-            </h2>
-            <p class="mt-4 text-base leading-8 text-slate-300">
-              कुनै जानकारी, सहयोग, साझेदारी वा कार्यक्रमसम्बन्धी कुरा भए तलको form भर्नुहोस्।
-            </p>
-
-            <form action="https://formcarry.com/s/ddBBVdJREYF" method="POST" class="mt-8 grid gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                class="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300 outline-none"
-              />
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                class="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300 outline-none"
-              />
-
-              <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
-                class="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300 outline-none"
-              />
-
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                class="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300 outline-none"
-              />
-
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Your Message"
-                required
-                class="rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300 outline-none"
-              ></textarea>
-
-              <button
-                type="submit"
-                class="rounded-full bg-emerald-600 px-6 py-3 font-bold text-white transition hover:bg-emerald-700"
-              >
-                Submit Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <button
-      onclick="openDonateModal()"
-      class="float-donate fixed bottom-6 right-6 z-50 rounded-full bg-red-600 px-6 py-4 text-sm font-black text-white shadow-2xl shadow-red-300 transition hover:bg-red-700"
-    >
-      Donate
-    </button>
-
-    <div id="donateModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-slate-950/70 p-4">
-      <div class="w-full max-w-md rounded-[2rem] bg-white p-8 text-center soft-shadow">
-        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100 text-3xl">❤️</div>
-        <h3 class="mt-5 text-2xl font-black text-slate-900">Donation Opening Soon</h3>
-        <p class="mt-4 text-base leading-7 text-slate-600">
-          हाम्रो donation system छिट्टै खुल्दैछ। सहयोग गर्न चाहनुहुन्छ भने अहिलेका लागि फोन वा email मार्फत सम्पर्क गर्नुहोस्।
-        </p>
-        <div class="mt-6 space-y-2 text-sm font-semibold text-slate-700">
-          <p>Phone: 9766106675</p>
-          <p>Email: shalomgurufoundation@gmail.com</p>
-        </div>
-        <button
-          onclick="closeDonateModal()"
-          class="mt-8 rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-
-    <footer class="border-t border-slate-200 bg-white">
-      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
-        <div class="lg:col-span-2">
-          <div class="flex items-center gap-3">
-            <img
-              src="images/logo.png"
-              alt="Shalom Guru Foundation Logo"
-              class="h-12 w-12 rounded-2xl object-cover shadow-lg shadow-emerald-200 ring-1 ring-emerald-100"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="hidden h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-700 to-lime-500 text-xl text-white shadow-lg shadow-emerald-200">🌿</div>
+      <section id="about" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <details class="rounded-[2rem] bg-white p-6 soft-shadow sm:p-8" open>
+          <summary class="flex cursor-pointer items-center justify-between gap-4">
             <div>
-              <p class="text-lg font-black">Shalom Guru Foundation</p>
-              <p class="text-sm font-medium text-slate-500">Humanity Is Our Religion. Service Is Our Mission.</p>
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">About Foundation</p>
+              <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">About Foundation</h2>
+            </div>
+            <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800">Open</span>
+          </summary>
+
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div>
+              <p class="text-base leading-8 text-slate-600 sm:text-lg">
+                <span class="font-bold text-slate-900">Shalom Guru Foundation</span> शिक्षा, स्वास्थ्य, वातावरणीय
+                सरसफाइ, सामाजिक उत्थान, सीप विकास, गरिबी न्यूनीकरण र मानव अधिकारसम्बन्धी जनचेतना फैलाउने उद्देश्यले
+                स्थापना गरिएको संस्था हो।
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-emerald-100 bg-emerald-50 p-5">
+                <h3 class="text-lg font-extrabold text-emerald-900">Mission</h3>
+                <p class="mt-3 text-sm leading-7 text-emerald-900/80">
+                  शिक्षा, स्वास्थ्य, सरसफाइ, वातावरण संरक्षण र सामाजिक समावेशीकरणका माध्यमबाट सम्मानजनक र अवसरयुक्त जीवन निर्माण गर्ने।
+                </p>
+              </div>
+              <div class="rounded-2xl border border-lime-100 bg-lime-50 p-5">
+                <h3 class="text-lg font-extrabold text-lime-900">Vision</h3>
+                <p class="mt-3 text-sm leading-7 text-lime-900/80">
+                  प्रत्येक व्यक्ति, परिवार र समुदायले सुरक्षित, स्वस्थ, सफा र समावेशी वातावरणमा जीवनयापन गर्न सक्ने नेपाल निर्माण गर्नु।
+                </p>
+              </div>
             </div>
           </div>
-          <p class="mt-5 max-w-xl text-sm leading-7 text-slate-600">
-            समुदायको सम्मान, समान अवसर, स्वच्छ वातावरण र स्वस्थ जीवनका लागि समर्पित सामाजिक संस्था।
-          </p>
-        </div>
+        </details>
+      </section>
 
-        <div>
-          <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-slate-900">Contact</p>
-          <div class="mt-5 space-y-3 text-sm text-slate-600">
-            <a href="mailto:shalomgurufoundation@gmail.com" class="block break-all hover:text-emerald-700">shalomgurufoundation@gmail.com</a>
-            <a href="tel:+977 9766106675" class="block hover:text-emerald-700">9766106675</a>
+      <section id="work" class="mx-auto max-w-7xl px-4 py-2 sm:px-6 sm:py-4 lg:px-8">
+        <details class="rounded-[2rem] bg-white p-6 soft-shadow sm:p-8" open>
+          <summary class="flex cursor-pointer items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Our Work</p>
+              <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Our Work</h2>
+            </div>
+            <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800">Open</span>
+          </summary>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div class="rounded-[1.5rem] border border-slate-100 bg-stone-50 p-6">
+              <h3 class="text-lg font-black text-slate-900">शिक्षा सहयोग</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">छात्रवृत्ति, शैक्षिक सामग्री, विद्यार्थी सहयोग र शिक्षाबाट वञ्चित समूहमा पहुँच।</p>
+            </div>
+            <div class="rounded-[1.5rem] border border-slate-100 bg-stone-50 p-6">
+              <h3 class="text-lg font-black text-slate-900">स्वास्थ्य तथा कल्याण</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">स्वास्थ्य शिविर, क्लिनिक, प्राथमिक उपचार, जाँच र आर्थिक रूपमा विपन्न बिरामीलाई सहयोग।</p>
+            </div>
+            <div class="rounded-[1.5rem] border border-slate-100 bg-stone-50 p-6">
+              <h3 class="text-lg font-black text-slate-900">वातावरण तथा सरसफाइ</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">वृक्षारोपण, सरसफाइ अभियान, पानी व्यवस्थापन र स्वस्थ वातावरण निर्माणका कार्यक्रम।</p>
+            </div>
+            <div class="rounded-[1.5rem] border border-slate-100 bg-stone-50 p-6">
+              <h3 class="text-lg font-black text-slate-900">सामुदायिक सहयोग</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">विपन्न, सीमान्तकृत तथा सामाजिक विभेदमा परेका व्यक्तिहरूलाई प्रत्यक्ष सहयोग।</p>
+            </div>
+            <div class="rounded-[1.5rem] border border-slate-100 bg-stone-50 p-6">
+              <h3 class="text-lg font-black text-slate-900">सीप विकास</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">निःशुल्क तालिम, आत्मनिर्भरता, रोजगार अवसर र आजीविकासम्बन्धी कार्यक्रम।</p>
+            </div>
+            <div class="rounded-[1.5rem] border border-slate-100 bg-stone-50 p-6">
+              <h3 class="text-lg font-black text-slate-900">अधिकार र जनचेतना</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">मानव अधिकार, कानुन, संविधान, सामाजिक सचेतना र संस्कृति संरक्षणसम्बन्धी कार्यक्रम।</p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section id="team" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div class="rounded-[2rem] bg-white p-6 soft-shadow sm:p-8">
+          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Executive Committee</p>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Executive Committee</h2>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-[1.5rem] bg-slate-50 p-5">
+              <h3 class="text-base font-black text-slate-900">Dil Bahadur Guruwacharya</h3>
+              <p class="mt-2 text-sm font-semibold text-emerald-700">Executive President</p>
+            </div>
+            <div class="rounded-[1.5rem] bg-slate-50 p-5">
+              <h3 class="text-base font-black text-slate-900">Kumar Mijar</h3>
+              <p class="mt-2 text-sm font-semibold text-emerald-700">Executive Vice President</p>
+            </div>
+            <div class="rounded-[1.5rem] bg-slate-50 p-5">
+              <h3 class="text-base font-black text-slate-900">Ms. Debaki Guruwacharya</h3>
+              <p class="mt-2 text-sm font-semibold text-emerald-700">Executive Treasurer</p>
+            </div>
+            <div class="rounded-[1.5rem] bg-slate-50 p-5">
+              <h3 class="text-base font-black text-slate-900">Samir Mijar</h3>
+              <p class="mt-2 text-sm font-semibold text-emerald-700">Executive Secretary</p>
+            </div>
+            <div class="rounded-[1.5rem] bg-slate-50 p-5">
+              <h3 class="text-base font-black text-slate-900">Ms. Durga Aryal</h3>
+              <p class="mt-2 text-sm font-semibold text-emerald-700">Executive Member</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="border-t border-slate-200 bg-slate-50">
-        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-center text-sm text-slate-500 sm:px-6 md:flex-row lg:px-8">
-          <p>© <span id="year"></span> Shalom Guru Foundation. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+      <section id="objectives" class="mx-auto max-w-7xl px-4 py-2 sm:px-6 sm:py-4 lg:px-8">
+        <details class="rounded-[2rem] bg-white p-6 soft-shadow sm:p-8" open>
+          <summary class="flex cursor-pointer items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Objectives</p>
+              <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Objectives</h2>
+            </div>
+            <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800">Open</span>
+          </summary>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+          <div class="mt-8 grid gap-3">
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">1. आर्थिक रूपमा कमजोर तथा शिक्षाबाट वञ्चित भएका विद्यार्थीहरूलाई छात्रवृत्ति तथा शैक्षिक सहयोग प्रदान गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">2. वातावरण सन्तुलन र सरसफाइ प्रवर्द्धन गर्न वृक्षारोपण, खुला नाला व्यवस्थापन, धारा/पानीको व्यवस्था तथा सरसफाइसम्बन्धी कार्यक्रम सञ्चालन गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">3. स्वास्थ्य क्लिनिक तथा स्वास्थ्य शिविर सञ्चालन गरी आर्थिक रूपमा विपन्न व्यक्तिहरूलाई स्वास्थ्य परीक्षण र उपचारमा सहयोग गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">4. गरिबी न्यूनीकरणसम्बन्धी कार्यक्रमहरू सञ्चालन गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">5. शिक्षाको अभाव, आर्थिक विपन्नता तथा सामाजिक विभेदमा परेका व्यक्तिहरूलाई सहयोग गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">6. रोगीहरूका लागि खानपान, सरसफाइ तथा सुरक्षासम्बन्धी व्यवस्था मिलाई आर्थिक सहयोग तथा आवश्यक सहयोग उपलब्ध गराउने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">7. समाजमा सामाजिक उत्थानका लागि सामाजिक, आर्थिक, सांस्कृतिक तथा जनचेतनामूलक कार्यक्रमहरू सञ्चालन गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">8. सामाजिक विकासका लागि विभिन्न निःशुल्क सीपमूलक तालिम प्रदान गरी रोजगारीका अवसर सिर्जना गर्न सहयोग गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">9. नेपालको संस्कृतिको जगेर्ना गर्न विभिन्न सांस्कृतिक कार्यक्रमहरू सञ्चालन गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">10. समाजमा रहेका विकृति, विसंगति तथा विभिन्न अपराधिक गतिविधिविरुद्ध जनचेतना फैलाउने कार्यक्रम सञ्चालन गर्ने।</div>
+            <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-7 text-slate-700">11. संविधान, ऐन, नियम, कानून, मानव अधिकार तथा नागरिक कर्तव्यसम्बन्धी जनचेतनामूलक कार्यक्रम सञ्चालन गर्ने।</div>
+          </div>
+        </details>
+      </section>
 
-      function toggleMobileMenu() {
-        document.getElementById("mobileMenu").classList.toggle("hidden");
-      }
+      <section id="contact-form" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <details class="rounded-[2rem] bg-white p-6 soft-shadow sm:p-8">
+          <summary class="flex cursor-pointer items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Contact Form</p>
+              <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Contact Form</h2>
+            </div>
+            <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800">Open</span>
+          </summary>
 
-      function closeMobileMenu() {
-        document.getElementById("mobileMenu").classList.add("hidden");
-      }
+          <form action="https://formcarry.com/s/ddBBVdJREYF" method="POST" class="mt-8 grid gap-4">
+            <input type="text" name="name" placeholder="Your Name" required class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none" />
+            <input type="email" name="email" placeholder="Your Email" required class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none" />
+            <input type="text" name="phone" placeholder="Phone Number" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none" />
+            <input type="text" name="subject" placeholder="Subject" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none" />
+            <textarea name="message" rows="4" placeholder="Your Message" required class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none"></textarea>
 
-      function openDonateModal() {
-        document.getElementById("donateModal").classList.remove("hidden");
-        document.getElementById("donateModal").classList.add("flex");
-      }
+            <button type="submit" class="w-fit rounded-full bg-emerald-600 px-6 py-3 font-bold text-white hover:bg-emerald-700">
+              Submit Message
+            </button>
+          </form>
+        </details>
+      </section>
 
-      function closeDonateModal() {
-        document.getElementById("donateModal").classList.add("hidden");
-        document.getElementById("donateModal").classList.remove("flex");
-      }
-
-      const targetDate = new Date("2026-04-14T00:00:00").getTime();
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance <= 0) {
-          document.getElementById("days").textContent = "00";
-          document.getElementById("hours").textContent = "00";
-          document.getElementById("minutes").textContent = "00";
-          document.getElementById("seconds").textContent = "00";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = String(days).padStart(2, "0");
-        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
-  </body>
-          </html>
+      <section id="contact" class="mx-auto max-w-7xl px-4 py-2 sm:px-6 sm:py-4 lg:px-8">
+        <div class="rounded-[2rem] bg-slate-900 p-6 text-white soft-shadow sm:p-8">
+          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Contact</p>
+          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Phone</p>
+              <a href="tel:9766106675" class="mt-2 block text-base font-bold text-white hover:text-emerald-300">9766106675</a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Email</p>
+              <a href="mailto:shalomgur
