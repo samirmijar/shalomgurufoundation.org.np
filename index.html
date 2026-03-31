@@ -8,6 +8,7 @@
       name="description"
       content="Shalom Guru Foundation - शिक्षा, स्वास्थ्य, सरसफाइ, वातावरण संरक्षण, सामाजिक उत्थान र सामुदायिक सहयोगका लागि समर्पित संस्था।"
     />
+    <link rel="icon" type="image/png" href="images/logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       html { scroll-behavior: smooth; }
@@ -27,8 +28,8 @@
       .glass { backdrop-filter: blur(14px); }
       .grid-glow {
         background-image:
-          linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+          linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
         background-size: 28px 28px;
       }
       .float-donate { animation: floaty 3s ease-in-out infinite; }
@@ -36,11 +37,17 @@
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-7px); }
       }
-      .hero-orb { filter: blur(36px); opacity: .42; }
+      .hero-orb { filter: blur(42px); opacity: .28; }
       .soft-shadow { box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08); }
       .card-shadow { box-shadow: 0 16px 40px rgba(2, 132, 199, 0.06); }
+      .img-cover {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
     </style>
   </head>
+
   <body class="min-h-screen bg-slate-50 text-slate-900">
     <header class="sticky top-0 z-50 border-b border-emerald-100/80 bg-white/85 glass">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -53,27 +60,60 @@
           />
           <div class="hidden h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-700 to-lime-500 text-xl text-white shadow-lg shadow-emerald-200">🌿</div>
           <div>
-            <p class="text-base font-extrabold leading-tight sm:text-lg">shalomgurufoundation</p>
+            <p class="text-base font-extrabold leading-tight sm:text-lg">Shalom Guru Foundation</p>
             <p class="text-xs font-medium text-slate-500 sm:text-sm">Compassion in Action</p>
           </div>
         </a>
 
-        <nav class="hidden items-center gap-6 md:flex">
+        <nav class="hidden items-center gap-6 lg:flex">
           <a href="#home" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">गृहपृष्ठ</a>
           <a href="#about" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">हाम्रो बारेमा</a>
           <a href="#work" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Work</a>
           <a href="#projects" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Projects</a>
+          <a href="#team" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Team</a>
+          <a href="#gallery" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Gallery</a>
           <a href="#objectives" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">उद्देश्यहरू</a>
           <a href="#message-form" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">Message</a>
           <a href="#contact" class="text-sm font-semibold text-slate-700 transition hover:text-emerald-700">सम्पर्क</a>
         </nav>
 
-        <button
-          onclick="openDonateModal()"
-          class="rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-200 transition hover:-translate-y-0.5 hover:bg-red-700"
-        >
-          Donate
-        </button>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="openDonateModal()"
+            class="hidden rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-200 transition hover:-translate-y-0.5 hover:bg-red-700 sm:inline-flex"
+          >
+            Donate
+          </button>
+
+          <button
+            id="menuBtn"
+            class="inline-flex items-center justify-center rounded-xl border border-slate-200 p-2 text-slate-700 lg:hidden"
+            aria-label="Open menu"
+            onclick="toggleMobileMenu()"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hidden border-t border-emerald-100 bg-white lg:hidden">
+        <div class="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
+          <a href="#home" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">गृहपृष्ठ</a>
+          <a href="#about" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">हाम्रो बारेमा</a>
+          <a href="#work" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Work</a>
+          <a href="#projects" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Projects</a>
+          <a href="#team" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Team</a>
+          <a href="#gallery" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Gallery</a>
+          <a href="#objectives" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">उद्देश्यहरू</a>
+          <a href="#message-form" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">Message</a>
+          <a href="#contact" onclick="closeMobileMenu()" class="py-2 text-sm font-semibold text-slate-700">सम्पर्क</a>
+          <button
+            onclick="openDonateModal(); closeMobileMenu();"
+            class="mt-3 rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white"
+          >
+            Donate
+          </button>
+        </div>
       </div>
     </header>
 
@@ -83,9 +123,9 @@
         <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-lime-400 hero-orb"></div>
         <div class="absolute inset-0 grid-glow opacity-20"></div>
 
-        <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
+        <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div>
-            <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-emerald-200">
+            <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-200 sm:text-sm">
               <span>●</span>
               Nepal • Education • Health • Cleanliness • Community
             </div>
@@ -142,7 +182,7 @@
           <div>
             <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-4 soft-shadow">
               <div class="rounded-[1.5rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-lime-500 p-8">
-                <div class="flex min-h-[520px] flex-col justify-between">
+                <div class="flex min-h-[500px] flex-col justify-between">
                   <div>
                     <div class="inline-flex rounded-full bg-white/20 px-4 py-2 text-sm font-semibold">
                       Official Launch Countdown
@@ -191,7 +231,7 @@
         </div>
       </section>
 
-      <section id="about" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section id="about" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div class="rounded-[2rem] bg-white p-8 ring-1 ring-slate-100 soft-shadow sm:p-10">
             <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">About Foundation</p>
@@ -229,8 +269,8 @@
                 <li>• Premium landing section</li>
                 <li>• Countdown to official opening</li>
                 <li>• Floating donate button</li>
-                <li>• Projects and work sections</li>
-                <li>• Social links and contact integration</li>
+                <li>• Responsive mobile, tablet, laptop design</li>
+                <li>• Projects, team, gallery, and contact integration</li>
               </ul>
             </div>
 
@@ -239,7 +279,7 @@
               <div class="mt-6 space-y-4 text-sm text-slate-700">
                 <div>
                   <p class="font-bold text-slate-900">Foundation Name</p>
-                  <p>shalomgurufoundation</p>
+                  <p>Shalom Guru Foundation</p>
                 </div>
                 <div>
                   <p class="font-bold text-slate-900">Email</p>
@@ -250,8 +290,8 @@
                   <p>9766106675</p>
                 </div>
                 <div>
-                  <p class="font-bold text-slate-900">Social Media</p>
-                  <p>@shalomgurufoundation</p>
+                  <p class="font-bold text-slate-900">Website</p>
+                  <p class="break-all">shalomgurufoundation.org.np</p>
                 </div>
               </div>
             </div>
@@ -259,7 +299,7 @@
         </div>
       </section>
 
-      <section id="work" class="bg-white py-20">
+      <section id="work" class="bg-white py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Our Work</p>
           <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
@@ -309,7 +349,7 @@
         </div>
       </section>
 
-      <section id="projects" class="py-20">
+      <section id="projects" class="py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Projects</p>
           <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
@@ -320,10 +360,13 @@
           </p>
 
           <div class="mt-12 grid gap-6 lg:grid-cols-3">
-            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow transition hover:-translate-y-1">
               <div class="h-48 bg-gradient-to-br from-emerald-700 to-lime-500"></div>
               <div class="p-7">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">Project 01</p>
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">Project 01</p>
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">Upcoming</span>
+                </div>
                 <h3 class="mt-3 text-xl font-black text-slate-900">Scholarship Support Program</h3>
                 <p class="mt-4 text-sm leading-7 text-slate-600">
                   आर्थिक रूपमा कमजोर तथा शिक्षाबाट वञ्चित विद्यार्थीहरूलाई छात्रवृत्ति र शैक्षिक सामग्री सहयोग।
@@ -331,10 +374,13 @@
               </div>
             </div>
 
-            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow transition hover:-translate-y-1">
               <div class="h-48 bg-gradient-to-br from-cyan-700 to-emerald-500"></div>
               <div class="p-7">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">Project 02</p>
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">Project 02</p>
+                  <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800">Planned</span>
+                </div>
                 <h3 class="mt-3 text-xl font-black text-slate-900">Health Camp Initiative</h3>
                 <p class="mt-4 text-sm leading-7 text-slate-600">
                   स्वास्थ्य परीक्षण, जनचेतना, प्राथमिक उपचार तथा विपन्न समुदायका लागि स्वास्थ्य पहुँच विस्तार।
@@ -342,10 +388,13 @@
               </div>
             </div>
 
-            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow transition hover:-translate-y-1">
               <div class="h-48 bg-gradient-to-br from-amber-500 to-emerald-600"></div>
               <div class="p-7">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">Project 03</p>
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">Project 03</p>
+                  <span class="rounded-full bg-lime-100 px-3 py-1 text-xs font-bold text-lime-800">Ongoing</span>
+                </div>
                 <h3 class="mt-3 text-xl font-black text-slate-900">Clean Community Drive</h3>
                 <p class="mt-4 text-sm leading-7 text-slate-600">
                   वातावरण संरक्षण, सरसफाइ, वृक्षारोपण र सार्वजनिक सचेतना बढाउने सामुदायिक अभियान।
@@ -356,7 +405,123 @@
         </div>
       </section>
 
-      <section id="objectives" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section id="team" class="bg-white py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Executive Committee</p>
+          <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+            कार्यकारी समिति
+          </h2>
+          <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            संस्थाको नेतृत्व, योजना निर्माण र कार्यान्वयनमा संलग्न प्रमुख पदाधिकारीहरू।
+          </p>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
+              <h3 class="text-xl font-black text-slate-900">Dil Bahadur Guruwacharya</h3>
+              <p class="mt-2 font-semibold text-emerald-700">Executive President</p>
+            </div>
+
+            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
+              <h3 class="text-xl font-black text-slate-900">Kumar Mijar</h3>
+              <p class="mt-2 font-semibold text-emerald-700">Executive Vice President</p>
+            </div>
+
+            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
+              <h3 class="text-xl font-black text-slate-900">Ms. Debaki Guruwacharya</h3>
+              <p class="mt-2 font-semibold text-emerald-700">Executive Treasurer</p>
+            </div>
+
+            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
+              <h3 class="text-xl font-black text-slate-900">Samir Mijar</h3>
+              <p class="mt-2 font-semibold text-emerald-700">Executive Secretary</p>
+            </div>
+
+            <div class="rounded-[2rem] bg-slate-50 p-7 soft-shadow">
+              <h3 class="text-xl font-black text-slate-900">Ms. Durga Aryal</h3>
+              <p class="mt-2 font-semibold text-emerald-700">Executive Member</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Gallery</p>
+          <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+            फोटो ग्यालरी
+          </h2>
+          <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            यहाँ तपाईं संस्थाका कार्यक्रम, अभियान र सामुदायिक गतिविधिका वास्तविक तस्बिरहरू राख्न सक्नुहुन्छ।
+          </p>
+
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+              <div class="h-64 bg-gradient-to-br from-emerald-700 to-lime-500"></div>
+              <div class="p-4 text-sm font-semibold text-slate-700">Community Program Photo</div>
+            </div>
+
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+              <div class="h-64 bg-gradient-to-br from-cyan-700 to-sky-500"></div>
+              <div class="p-4 text-sm font-semibold text-slate-700">Health Camp Photo</div>
+            </div>
+
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+              <div class="h-64 bg-gradient-to-br from-amber-500 to-emerald-600"></div>
+              <div class="p-4 text-sm font-semibold text-slate-700">Education Support Photo</div>
+            </div>
+
+            <div class="overflow-hidden rounded-[2rem] bg-white soft-shadow">
+              <div class="h-64 bg-gradient-to-br from-fuchsia-600 to-pink-500"></div>
+              <div class="p-4 text-sm font-semibold text-slate-700">Cleanliness Campaign Photo</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="volunteer" class="bg-white py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div class="rounded-[2rem] bg-slate-900 p-8 text-white soft-shadow lg:col-span-2">
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Join Us</p>
+              <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
+                Volunteer, Partner, and Support Our Mission
+              </h2>
+              <p class="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+                यदि तपाईं Foundation सँग स्वयंसेवक, साझेदार, सहयोगी वा सामाजिक अभियानको हिस्सेदार बन्न चाहनुहुन्छ भने,
+                हामीसँग सम्पर्क गर्नुहोस्।
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="#message-form"
+                  class="rounded-full bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-emerald-700"
+                >
+                  Join as Volunteer
+                </a>
+                <a
+                  href="mailto:shalomgurufoundation@gmail.com"
+                  class="rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/20"
+                >
+                  Partner With Us
+                </a>
+              </div>
+            </div>
+
+            <div class="rounded-[2rem] bg-gradient-to-br from-emerald-50 to-lime-50 p-8 ring-1 ring-emerald-100 soft-shadow">
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-700">Website QR</p>
+              <div class="mt-6 rounded-[2rem] border-2 border-dashed border-emerald-300 bg-white p-6 text-center">
+                <div class="mx-auto flex h-40 w-40 items-center justify-center rounded-2xl bg-slate-100 text-sm font-bold text-slate-500">
+                  QR CODE
+                </div>
+                <p class="mt-4 text-sm font-semibold text-slate-700">Place your QR code here</p>
+                <p class="mt-1 break-all text-xs text-slate-500">shalomgurufoundation.org.np</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="objectives" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div class="rounded-[2rem] bg-slate-900 px-6 py-10 text-white soft-shadow sm:px-8 md:px-10 lg:px-12">
           <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Objectives</p>
           <h2 class="section-title mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
@@ -382,7 +547,7 @@
         </div>
       </section>
 
-      <section class="bg-gradient-to-br from-emerald-50 to-lime-50 py-20">
+      <section class="bg-gradient-to-br from-emerald-50 to-lime-50 py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="grid gap-6 lg:grid-cols-3">
             <div class="rounded-[2rem] bg-white p-8 soft-shadow lg:col-span-2">
@@ -416,6 +581,10 @@
                   <a href="mailto:shalomgurufoundation@gmail.com" class="mt-2 block break-all text-base font-bold text-white hover:text-emerald-300">shalomgurufoundation@gmail.com</a>
                 </div>
                 <div>
+                  <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Website</p>
+                  <p class="mt-2 break-all text-base font-bold text-white">shalomgurufoundation.org.np</p>
+                </div>
+                <div>
                   <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Handle</p>
                   <p class="mt-2 text-base font-bold text-white">@shalomgurufoundation</p>
                 </div>
@@ -425,7 +594,7 @@
         </div>
       </section>
 
-      <section id="message-form" class="bg-white py-20">
+      <section id="message-form" class="bg-white py-16 sm:py-20">
         <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div class="rounded-[2rem] bg-slate-900 p-8 text-white soft-shadow sm:p-10">
             <p class="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">Contact Form</p>
@@ -526,8 +695,8 @@
             />
             <div class="hidden h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-700 to-lime-500 text-xl text-white shadow-lg shadow-emerald-200">🌿</div>
             <div>
-              <p class="text-lg font-black">shalomgurufoundation</p>
-              <p class="text-sm font-medium text-slate-500">Compassion in Action</p>
+              <p class="text-lg font-black">Shalom Guru Foundation</p>
+              <p class="text-sm font-medium text-slate-500">Humanity Is Our Religion. Service Is Our Mission.</p>
             </div>
           </div>
           <p class="mt-5 max-w-xl text-sm leading-7 text-slate-600">
@@ -542,6 +711,8 @@
             <a href="#about" class="block hover:text-emerald-700">हाम्रो बारेमा</a>
             <a href="#work" class="block hover:text-emerald-700">Work</a>
             <a href="#projects" class="block hover:text-emerald-700">Projects</a>
+            <a href="#team" class="block hover:text-emerald-700">Team</a>
+            <a href="#gallery" class="block hover:text-emerald-700">Gallery</a>
             <a href="#objectives" class="block hover:text-emerald-700">उद्देश्यहरू</a>
             <a href="#message-form" class="block hover:text-emerald-700">Message</a>
             <a href="#contact" class="block hover:text-emerald-700">सम्पर्क</a>
@@ -551,9 +722,10 @@
         <div>
           <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-slate-900">Contact</p>
           <div class="mt-5 space-y-3 text-sm text-slate-600">
-            <p>shalomgurufoundation</p>
+            <p>Shalom Guru Foundation</p>
             <a href="mailto:shalomgurufoundation@gmail.com" class="block break-all hover:text-emerald-700">shalomgurufoundation@gmail.com</a>
             <a href="tel:9766106675" class="block hover:text-emerald-700">9766106675</a>
+            <p class="break-all">shalomgurufoundation.org.np</p>
             <p>@shalomgurufoundation</p>
           </div>
         </div>
@@ -561,14 +733,22 @@
 
       <div class="border-t border-slate-200 bg-slate-50">
         <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-center text-sm text-slate-500 sm:px-6 md:flex-row lg:px-8">
-          <p>© <span id="year"></span> shalomgurufoundation. All rights reserved.</p>
-          <p>Built as premium index.html for GitHub Pages</p>
+          <p>© <span id="year"></span> Shalom Guru Foundation. All rights reserved.</p>
+          <p>Built as premium responsive index.html for GitHub Pages</p>
         </div>
       </div>
     </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      function toggleMobileMenu() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      }
+
+      function closeMobileMenu() {
+        document.getElementById("mobileMenu").classList.add("hidden");
+      }
 
       function openDonateModal() {
         document.getElementById("donateModal").classList.remove("hidden");
