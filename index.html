@@ -24,6 +24,10 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -33,7 +37,7 @@
     }
 
     .navbar {
-      max-width: 1200px;
+      max-width: 1250px;
       margin: auto;
       padding: 14px 18px;
       display: flex;
@@ -49,22 +53,22 @@
       min-width: 0;
     }
 
-    .brand img {
-      width: 82px;
-      height: 82px;
+    .header-logo {
+      width: 95px;
+      height: 95px;
       object-fit: contain;
       flex-shrink: 0;
     }
 
     .brand-text h1 {
-      font-size: 26px;
+      font-size: 28px;
       color: #0b3d2e;
       line-height: 1.2;
       margin-bottom: 4px;
     }
 
     .brand-text p {
-      font-size: 13px;
+      font-size: 14px;
       color: #666;
     }
 
@@ -93,9 +97,10 @@
     .donate-btn {
       background: #991b1b;
       color: white;
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 30px;
       font-size: 16px;
+      display: inline-block;
     }
 
     .menu-btn {
@@ -175,6 +180,7 @@
     .primary-btn {
       background: #0b3d2e;
       color: #fff;
+      display: inline-block;
     }
 
     .secondary-btn {
@@ -183,11 +189,18 @@
       border: 2px solid #0b3d2e !important;
     }
 
+    .hero-image {
+      text-align: center;
+    }
+
     .hero-image img {
       width: 100%;
+      max-width: 450px;
       border-radius: 18px;
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
       object-fit: cover;
+      background: #fff;
+      padding: 10px;
     }
 
     section {
@@ -201,8 +214,8 @@
 
     .section-title {
       text-align: center;
-      font-size: 42px;
-      color: #175c2e;
+      font-size: 44px;
+      color: #111827;
       margin-bottom: 14px;
     }
 
@@ -246,15 +259,13 @@
     }
 
     .objectives-grid,
-    .team-grid,
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 22px;
     }
 
     .objective-card,
-    .team-card,
     .project-card {
       background: #fff;
       padding: 24px;
@@ -263,7 +274,6 @@
     }
 
     .objective-card h3,
-    .team-card h3,
     .project-card h3 {
       color: #175c2e;
       margin-bottom: 10px;
@@ -271,7 +281,6 @@
     }
 
     .objective-card p,
-    .team-card p,
     .project-card p {
       color: #555;
       font-size: 17px;
@@ -281,30 +290,157 @@
       background: #f4fbf5;
     }
 
-    .donation-box {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      background: white;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .donation-box img {
-      width: 260px;
-      max-width: 100%;
-      border-radius: 16px;
-      margin: 20px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
     .gallery-placeholder {
       text-align: center;
       max-width: 850px;
       margin: auto;
       font-size: 20px;
       color: #666;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .leader-card {
+      background: #fff;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .leader-card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #eef3ef;
+    }
+
+    .leader-card h3 {
+      font-size: 24px;
+      color: #0b3d2e;
+      margin-bottom: 8px;
+    }
+
+    .leader-card p {
+      font-size: 17px;
+      color: #666;
+    }
+
+    .other-members {
+      margin-top: 50px;
+    }
+
+    .other-members h3 {
+      text-align: center;
+      font-size: 34px;
+      color: #175c2e;
+      margin-bottom: 30px;
+    }
+
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .other-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .other-card h4 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #1a1a1a;
+    }
+
+    .other-card p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    .social-section {
+      padding: 70px 20px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .social-grid {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .social-box {
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .social-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .social-box img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .connect-box {
+      background: #f8f8f8;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .connect-box form select,
+    .connect-box form input,
+    .connect-box form textarea {
+      width: 100%;
+      padding: 18px;
+      border-radius: 15px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      font-size: 18px;
+      background: #fff;
+    }
+
+    .connect-box form textarea {
+      height: 180px;
+      resize: none;
+    }
+
+    .connect-box form button {
+      width: 100%;
+      background: #991b1b;
+      color: white;
+      border: none;
+      padding: 18px;
+      border-radius: 40px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .contact-box {
@@ -365,19 +501,6 @@
       margin-bottom: 18px;
     }
 
-    .social-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .social-links a {
-      background: rgba(255,255,255,0.08);
-      padding: 10px 14px;
-      border-radius: 10px;
-    }
-
     .footer-bottom {
       max-width: 1200px;
       margin: 35px auto 0;
@@ -404,7 +527,7 @@
       z-index: 1001;
     }
 
-    .floating-donate button {
+    .floating-donate a {
       background: #991b1b;
       color: white;
       border: none;
@@ -413,7 +536,7 @@
       font-size: 18px;
       font-weight: bold;
       box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      cursor: pointer;
+      display: inline-block;
     }
 
     .nepali {
@@ -421,11 +544,11 @@
     }
 
     body.nepali-mode .english {
-      display: none;
+      display: none !important;
     }
 
     body.nepali-mode .nepali {
-      display: block;
+      display: block !important;
     }
 
     @media (max-width: 900px) {
@@ -443,13 +566,13 @@
         font-size: 20px;
       }
 
-      .brand img {
-        width: 68px;
-        height: 68px;
+      .header-logo {
+        width: 75px;
+        height: 75px;
       }
 
       .brand-text h1 {
-        font-size: 20px;
+        font-size: 22px;
       }
 
       .nav-links {
@@ -470,9 +593,9 @@
         gap: 10px;
       }
 
-      .brand img {
-        width: 58px;
-        height: 58px;
+      .header-logo {
+        width: 68px;
+        height: 68px;
       }
 
       .brand-text h1 {
@@ -518,35 +641,39 @@
         font-size: 17px;
       }
 
-      .floating-donate button {
+      .floating-donate a {
         padding: 14px 20px;
         font-size: 16px;
+      }
+
+      .social-box {
+        width: 85px;
+        height: 85px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="navbar">
       <div class="brand">
-        <img src="png.images/new-logo.png" alt="Shalom Guru Foundation Logo">
+        <img src="png.images/new-logo.png" alt="Shalom Guru Foundation Logo" class="header-logo">
         <div class="brand-text">
           <h1 class="english">Shalom Guru Foundation</h1>
           <h1 class="nepali">शालोम गुरु फाउन्डेशन</h1>
 
-          <p class="english">Humanity is our religion | Service is our Mission</p>
-          <p class="nepali">मानवता हाम्रो धर्म हो | सेवा हाम्रो मिशन हो</p>
+          <p class="english">Likhu-3, Nuwakot, Nepal</p>
+          <p class="nepali">लिखु-३, नुवाकोट, नेपाल</p>
         </div>
       </div>
 
       <div class="nav-actions">
         <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">नेपाली</button>
-        <button class="donate-btn" onclick="showDonationMessage()">
+        <a href="donate.html" class="donate-btn">
           <span class="english">Donate</span>
           <span class="nepali">दान</span>
-        </button>
+        </a>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
       </div>
     </div>
@@ -554,16 +681,14 @@
     <nav class="nav-links" id="mobileMenu">
       <a href="#home"><span class="english">Home</span><span class="nepali">होम</span></a>
       <a href="#about"><span class="english">About</span><span class="nepali">हाम्रो बारेमा</span></a>
-      <a href="#mission"><span class="english">Mission & Vision</span><span class="nepali">मिशन र भिजन</span></a>
       <a href="#objectives"><span class="english">Objectives</span><span class="nepali">उद्देश्यहरू</span></a>
-      <a href="#team"><span class="english">Team</span><span class="nepali">कार्यसमिति</span></a>
-      <a href="#projects"><span class="english">Projects</span><span class="nepali">कार्यक्रमहरू</span></a>
-      <a href="#donate"><span class="english">Donate</span><span class="nepali">दान</span></a>
+      <a href="#leadership"><span class="english">Leadership</span><span class="nepali">नेतृत्व</span></a>
+      <a href="#projects"><span class="english">Our Work</span><span class="nepali">हाम्रो काम</span></a>
+      <a href="#social"><span class="english">Connect</span><span class="nepali">जोडिनुहोस्</span></a>
       <a href="#contact"><span class="english">Contact</span><span class="nepali">सम्पर्क</span></a>
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <div>
@@ -583,10 +708,11 @@
             <span class="english">Learn More</span>
             <span class="nepali">थप जान्नुहोस्</span>
           </a>
-          <button class="secondary-btn" onclick="showDonationMessage()">
-            <span class="english">Donation Coming Soon</span>
-            <span class="nepali">दान चाँडै खुल्दैछ</span>
-          </button>
+
+          <a href="donate.html" class="secondary-btn">
+            <span class="english">Donate Page</span>
+            <span class="nepali">दान पेज</span>
+          </a>
         </div>
       </div>
 
@@ -596,7 +722,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
       <h2 class="section-title english">About Us</h2>
@@ -625,7 +750,6 @@
     </div>
   </section>
 
-  <!-- MISSION VISION -->
   <section class="highlight-bg" id="mission">
     <div class="container">
       <h2 class="section-title english">Mission & Vision</h2>
@@ -665,119 +789,191 @@
     </div>
   </section>
 
-  <!-- OBJECTIVES -->
   <section id="objectives">
     <div class="container">
-      <h2 class="section-title english">Our Objectives</h2>
-      <h2 class="section-title nepali">हाम्रा उद्देश्यहरू</h2>
+      <h2 class="section-title english">Foundation Objectives</h2>
+      <h2 class="section-title nepali">फाउन्डेशन उद्देश्यहरू</h2>
 
       <p class="section-subtitle english">
-        We are committed to serving society through education, health, awareness, and community support.
+        Main objectives of Shalom Guru Foundation.
       </p>
       <p class="section-subtitle nepali">
-        हामी शिक्षा, स्वास्थ्य, जनचेतना र सामुदायिक सहयोगमार्फत समाजसेवामा समर्पित छौं।
+        शालोम गुरु फाउन्डेशनका मुख्य उद्देश्यहरू।
       </p>
 
       <div class="objectives-grid">
         <div class="objective-card">
           <h3 class="english">1. Educational Support</h3>
           <h3 class="nepali">१. शैक्षिक सहयोग</h3>
-          <p class="english">To provide scholarships and support for financially weak and underprivileged students.</p>
-          <p class="nepali">आर्थिक रूपमा कमजोर तथा शैक्षिक अवसरबाट वञ्चित विद्यार्थीहरूलाई छात्रवृत्ति तथा शैक्षिक सहयोग प्रदान गर्ने।</p>
+          <p class="english">Provide scholarship and educational support for students who are deprived of education due to financial hardship.</p>
+          <p class="nepali">आर्थिक अभावका कारण शिक्षा प्राप्त गर्न नसकेका विद्यार्थीहरूलाई छात्रवृत्ति तथा शैक्षिक सहयोग प्रदान गर्ने।</p>
         </div>
 
         <div class="objective-card">
           <h3 class="english">2. Environmental Protection</h3>
           <h3 class="nepali">२. वातावरण संरक्षण</h3>
-          <p class="english">To conduct tree plantation, sanitation, cleaning, and environmental awareness programs.</p>
-          <p class="nepali">वृक्षारोपण, सरसफाइ, ढल तथा फोहोर व्यवस्थापन र वातावरणीय जनचेतना कार्यक्रम सञ्चालन गर्ने।</p>
+          <p class="english">Promote environmental protection through plantation, sanitation, drainage, and public cleanliness efforts.</p>
+          <p class="nepali">वृक्षारोपण, सरसफाइ, ढल व्यवस्थापन तथा वातावरण संरक्षण सम्बन्धी कार्यक्रम सञ्चालन गर्ने।</p>
         </div>
 
         <div class="objective-card">
-          <h3 class="english">3. Health and Medical Support</h3>
-          <h3 class="nepali">३. स्वास्थ्य तथा उपचार सहयोग</h3>
-          <p class="english">To support poor, helpless, disabled, and sick people through health and medical help.</p>
-          <p class="nepali">गरिब, असहाय, अपाङ्गता भएका तथा बिरामी व्यक्तिहरूलाई स्वास्थ्य सेवा, उपचार र सहयोग प्रदान गर्ने।</p>
+          <h3 class="english">3. Health Support</h3>
+          <h3 class="nepali">३. स्वास्थ्य सहयोग</h3>
+          <p class="english">Organize health camps, clinics, and support programs for financially vulnerable people.</p>
+          <p class="nepali">आर्थिक रूपमा कमजोर वर्गका लागि स्वास्थ्य शिविर तथा स्वास्थ्य सहयोग कार्यक्रम सञ्चालन गर्ने।</p>
         </div>
 
         <div class="objective-card">
-          <h3 class="english">4. Poverty Reduction</h3>
+          <h3 class="english">4. Poverty Alleviation</h3>
           <h3 class="nepali">४. गरिबी निवारण</h3>
-          <p class="english">To organize activities that help reduce poverty and improve living conditions.</p>
-          <p class="nepali">गरिबी घटाउन तथा जीवनस्तर सुधार गर्न सहयोग पुग्ने कार्यक्रम सञ्चालन गर्ने।</p>
+          <p class="english">Conduct poverty alleviation and social welfare related programs.</p>
+          <p class="nepali">गरिबी निवारण तथा सामाजिक कल्याण सम्बन्धी कार्यक्रम सञ्चालन गर्ने।</p>
         </div>
 
         <div class="objective-card">
           <h3 class="english">5. Support for Vulnerable Groups</h3>
-          <h3 class="nepali">५. कमजोर वर्गको सहयोग</h3>
-          <p class="english">To support people affected by lack of education, poverty, and social discrimination.</p>
-          <p class="nepali">शिक्षाको अभाव, आर्थिक विपन्नता र सामाजिक विभेदमा परेका व्यक्तिहरूलाई सहयोग गर्ने।</p>
+          <h3 class="nepali">५. कमजोर वर्गलाई सहयोग</h3>
+          <p class="english">Support people affected by educational barriers, poverty, and social discrimination.</p>
+          <p class="nepali">शैक्षिक, आर्थिक तथा सामाजिक विभेदबाट प्रभावित व्यक्तिहरूलाई सहयोग गर्ने।</p>
         </div>
 
         <div class="objective-card">
-          <h3 class="english">6. Skill Development</h3>
-          <h3 class="nepali">६. सीप विकास तथा रोजगारी</h3>
-          <p class="english">To provide skill-based training and create employment opportunities.</p>
-          <p class="nepali">विभिन्न सीपमूलक तालिम प्रदान गरी रोजगारीका अवसर सृजना गर्ने।</p>
+          <h3 class="english">6. Child and Protection Support</h3>
+          <h3 class="nepali">६. बालबालिका तथा संरक्षण</h3>
+          <p class="english">Support children, vulnerable groups, and those needing protection and assistance.</p>
+          <p class="nepali">बालबालिका तथा असहाय वर्गका व्यक्तिहरूको संरक्षण तथा सहयोग गर्ने।</p>
         </div>
 
         <div class="objective-card">
-          <h3 class="english">7. Cultural Preservation</h3>
-          <h3 class="nepali">७. संस्कृति संरक्षण</h3>
-          <p class="english">To preserve and promote Nepali culture through programs and community events.</p>
-          <p class="nepali">नेपाली संस्कृति जोगाउन तथा प्रवर्द्धन गर्न विभिन्न सांस्कृतिक कार्यक्रम सञ्चालन गर्ने।</p>
+          <h3 class="english">7. Social and Cultural Awareness</h3>
+          <h3 class="nepali">७. सामाजिक तथा सांस्कृतिक जनचेतना</h3>
+          <p class="english">Run social, economic, and cultural awareness programs for community upliftment.</p>
+          <p class="nepali">समाजको उन्नतिको लागि सामाजिक, आर्थिक तथा सांस्कृतिक जनचेतनामूलक कार्यक्रम सञ्चालन गर्ने।</p>
         </div>
 
         <div class="objective-card">
-          <h3 class="english">8. Social Awareness</h3>
-          <h3 class="nepali">८. सामाजिक जनचेतना</h3>
-          <p class="english">To raise awareness against social problems, crime, violence, and harmful activities.</p>
-          <p class="nepali">समाजमा हुने विकृति, विसंगति, अपराध र हिंसाविरुद्ध जनचेतनामूलक कार्यक्रम सञ्चालन गर्ने।</p>
+          <h3 class="english">8. Skill Development</h3>
+          <h3 class="nepali">८. सीप विकास</h3>
+          <p class="english">Provide skill-based training and help create livelihood opportunities.</p>
+          <p class="nepali">विभिन्न सीपमूलक तालिम प्रदान गरी जीविकोपार्जनका अवसर सिर्जना गर्ने।</p>
         </div>
 
         <div class="objective-card">
-          <h3 class="english">9. Human Rights Awareness</h3>
-          <h3 class="nepali">९. मानव अधिकार तथा कानुनी जनचेतना</h3>
-          <p class="english">To organize awareness programs related to human rights, duties, law, and constitutional rights.</p>
-          <p class="nepali">मानव अधिकार, कर्तव्य, नियम कानून र संवैधानिक अधिकार सम्बन्धी जनचेतनामूलक कार्यक्रम सञ्चालन गर्ने।</p>
+          <h3 class="english">9. Nepali Culture Preservation</h3>
+          <h3 class="nepali">९. नेपाली संस्कृति संरक्षण</h3>
+          <p class="english">Preserve and promote Nepali culture through different cultural programs.</p>
+          <p class="nepali">नेपाली संस्कृतिको जगेर्ना गर्न विभिन्न सांस्कृतिक कार्यक्रम सञ्चालन गर्ने।</p>
+        </div>
+
+        <div class="objective-card">
+          <h3 class="english">10. Social Reform Awareness</h3>
+          <h3 class="nepali">१०. सामाजिक सुधार जनचेतना</h3>
+          <p class="english">Raise awareness against crime, social problems, and harmful activities in society.</p>
+          <p class="nepali">समाजमा रहेका विकृति, विसंगति तथा अपराध विरुद्ध जनचेतना फैलाउने कार्यक्रम सञ्चालन गर्ने।</p>
+        </div>
+
+        <div class="objective-card">
+          <h3 class="english">11. Human Rights and Legal Awareness</h3>
+          <h3 class="nepali">११. मानव अधिकार तथा कानुनी जनचेतना</h3>
+          <p class="english">Conduct awareness programs on human rights, duties, constitution, and law.</p>
+          <p class="nepali">मानव अधिकार, कर्तव्य, संविधान तथा नियम कानून सम्बन्धी जनचेतनामूलक कार्यक्रम सञ्चालन गर्ने।</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TEAM -->
-  <section class="team" id="team">
+  <section class="team highlight-bg" id="leadership">
     <div class="container">
-      <h2 class="section-title english">Our Executive Team</h2>
-      <h2 class="section-title nepali">हाम्रो कार्यसमिति</h2>
+      <h2 class="section-title english">Foundation Leadership</h2>
+      <h2 class="section-title nepali">फाउन्डेशन नेतृत्व</h2>
 
       <p class="section-subtitle english">
-        Meet the dedicated members of Shalom Guru Foundation working together for social service and community development.
+        Meet the dedicated leadership team of Shalom Guru Foundation.
       </p>
       <p class="section-subtitle nepali">
-        समाजसेवा र सामुदायिक विकासका लागि समर्पित शालोम गुरु फाउन्डेशनका कार्यसमिति सदस्यहरू।
+        शालोम गुरु फाउन्डेशनको समर्पित नेतृत्व टोलीलाई भेट्नुहोस्।
       </p>
 
-      <div class="team-grid">
-        <div class="team-card"><h3>Dil Bahadur Guruwacharya</h3><p class="english">Executive President</p><p class="nepali">कार्यकारी अध्यक्ष</p></div>
-        <div class="team-card"><h3>Kumar Mijar</h3><p class="english">Executive Vice President</p><p class="nepali">कार्यकारी उपाध्यक्ष</p></div>
-        <div class="team-card"><h3>Ms. Debaki Guruwacharya</h3><p class="english">Executive Treasurer</p><p class="nepali">कार्यकारी कोषाध्यक्ष</p></div>
-        <div class="team-card"><h3>Samir Mijar</h3><p class="english">Executive Secretary</p><p class="nepali">कार्यकारी सचिव</p></div>
-        <div class="team-card"><h3>Durga Aryal</h3><p class="english">Executive Member</p><p class="nepali">कार्यकारी सदस्य</p></div>
-        <div class="team-card"><h3>Amar Bahadur Guruwacharya</h3><p class="english">Member</p><p class="nepali">सदस्य</p></div>
-        <div class="team-card"><h3>Chandra Bahadur Tamang</h3><p class="english">Member</p><p class="nepali">सदस्य</p></div>
-        <div class="team-card"><h3>Ashmita Mijar</h3><p class="english">Member</p><p class="nepali">सदस्य</p></div>
-        <div class="team-card"><h3>Parvati Tamang</h3><p class="english">Member</p><p class="nepali">सदस्य</p></div>
-        <div class="team-card"><h3>Rupa Shremali</h3><p class="english">Member</p><p class="nepali">सदस्य</p></div>
+      <div class="leadership-grid">
+        <div class="leader-card">
+          <img src="png.images/president.jpg" alt="Dil Bahadur Guruwacharya">
+          <h3>Dil Bahadur Guruwacharya</h3>
+          <p class="english">Executive President</p>
+          <p class="nepali">कार्यकारी अध्यक्ष</p>
+        </div>
+
+        <div class="leader-card">
+          <img src="png.images/vice-president.jpg" alt="Kumar Mijar">
+          <h3>Kumar Mijar</h3>
+          <p class="english">Executive Vice President</p>
+          <p class="nepali">कार्यकारी उपाध्यक्ष</p>
+        </div>
+
+        <div class="leader-card">
+          <img src="png.images/treasurer.jpg" alt="Debaki Guruwacharya">
+          <h3>Ms. Debaki Guruwacharya</h3>
+          <p class="english">Executive Treasurer</p>
+          <p class="nepali">कार्यकारी कोषाध्यक्ष</p>
+        </div>
+
+        <div class="leader-card">
+          <img src="png.images/secretary.jpg" alt="Samir Mijar">
+          <h3>Samir Mijar</h3>
+          <p class="english">Executive Secretary</p>
+          <p class="nepali">कार्यकारी सचिव</p>
+        </div>
+
+        <div class="leader-card">
+          <img src="png.images/member.jpg" alt="Durga Aryal">
+          <h3>Durga Aryal</h3>
+          <p class="english">Executive Member</p>
+          <p class="nepali">कार्यकारी सदस्य</p>
+        </div>
+      </div>
+
+      <div class="other-members">
+        <h3 class="english">Other Members</h3>
+        <h3 class="nepali">अन्य सदस्यहरू</h3>
+
+        <div class="other-grid">
+          <div class="other-card">
+            <h4>Amar Bahadur Guruwacharya</h4>
+            <p class="english">Member</p>
+            <p class="nepali">सदस्य</p>
+          </div>
+
+          <div class="other-card">
+            <h4>Chandra Bahadur Tamang</h4>
+            <p class="english">Member</p>
+            <p class="nepali">सदस्य</p>
+          </div>
+
+          <div class="other-card">
+            <h4>Ashmita Mijar</h4>
+            <p class="english">Member</p>
+            <p class="nepali">सदस्य</p>
+          </div>
+
+          <div class="other-card">
+            <h4>Parvati Tamang</h4>
+            <p class="english">Member</p>
+            <p class="nepali">सदस्य</p>
+          </div>
+
+          <div class="other-card">
+            <h4>Rupa Shremali</h4>
+            <p class="english">Member</p>
+            <p class="nepali">सदस्य</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section class="highlight-bg" id="projects">
     <div class="container">
-      <h2 class="section-title english">Upcoming Projects</h2>
-      <h2 class="section-title nepali">आगामी कार्यक्रमहरू</h2>
+      <h2 class="section-title english">Our Work</h2>
+      <h2 class="section-title nepali">हाम्रो काम</h2>
 
       <p class="section-subtitle english">
         We are preparing meaningful activities for the future growth of our foundation and community support.
@@ -818,7 +1014,6 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section id="gallery">
     <div class="container">
       <h2 class="section-title english">Gallery</h2>
@@ -833,36 +1028,73 @@
     </div>
   </section>
 
-  <!-- DONATE -->
-  <section class="highlight-bg" id="donate">
+  <section class="social-section" id="social">
     <div class="container">
-      <h2 class="section-title english">Donate</h2>
-      <h2 class="section-title nepali">दान</h2>
+      <h2 class="section-title english">Follow Us</h2>
+      <h2 class="section-title nepali">हामीलाई फलो गर्नुहोस्</h2>
 
-      <div class="donation-box">
-        <p class="english" style="font-size:20px; color:#555;">
-          Donation support will be available soon. We plan to accept donations through Fonepay QR.
-        </p>
+      <p class="section-subtitle english">
+        Connect with Shalom Guru Foundation on social media.
+      </p>
+      <p class="section-subtitle nepali">
+        सामाजिक सञ्जालमा शालोम गुरु फाउन्डेशनसँग जोडिनुहोस्।
+      </p>
 
-        <p class="nepali" style="font-size:20px; color:#555;">
-          दान सहयोग चाँडै उपलब्ध हुनेछ। हामी Fonepay QR मार्फत दान स्वीकार गर्ने योजना बनाइरहेका छौं।
-        </p>
+      <div class="social-grid">
+        <a href="https://facebook.com/shalomgurufoundation" target="_blank" class="social-box">
+          <img src="png.images/facebook.png" alt="Facebook">
+        </a>
 
-        <!-- Replace with your QR image later -->
-        <!-- <img src="fonepay-qr.jpg" alt="Fonepay QR"> -->
+        <a href="https://instagram.com/shalomgurufoundation" target="_blank" class="social-box">
+          <img src="png.images/instagram.png" alt="Instagram">
+        </a>
 
-        <p class="english" style="font-size:18px; color:#777;">
-          Fonepay QR will be added here after donation is officially opened.
-        </p>
+        <a href="https://tiktok.com/@shalomgurufoundation" target="_blank" class="social-box">
+          <img src="png.images/tiktok.png" alt="TikTok">
+        </a>
 
-        <p class="nepali" style="font-size:18px; color:#777;">
-          दान औपचारिक रूपमा सुरु भएपछि Fonepay QR यहाँ राखिनेछ।
-        </p>
+        <a href="https://youtube.com/@shalomgurufoundation" target="_blank" class="social-box">
+          <img src="png.images/youtube.png" alt="YouTube">
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <section class="contact" id="connect">
+    <div class="container">
+      <h2 class="section-title english">Connect With Us</h2>
+      <h2 class="section-title nepali">हामीसँग जोडिनुहोस्</h2>
+
+      <p class="section-subtitle english">
+        Send us a message, become a volunteer, or register to receive updates.
+      </p>
+      <p class="section-subtitle nepali">
+        हामीलाई सन्देश पठाउनुहोस्, स्वयंसेवक बन्नुहोस्, वा अपडेट पाउन दर्ता गर्नुहोस्।
+      </p>
+
+      <div class="connect-box">
+        <form onsubmit="showSubmitMessage(event)">
+          <select>
+            <option>Select request type</option>
+            <option>Send a Message</option>
+            <option>Become a Volunteer</option>
+            <option>Register to Receive Updates</option>
+          </select>
+
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email Address">
+          <input type="text" placeholder="Phone Number">
+          <textarea placeholder="Write your message or tell us how you want to help"></textarea>
+
+          <button type="submit">
+            <span class="english">Submit</span>
+            <span class="nepali">पेश गर्नुहोस्</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="container">
       <h2 class="section-title english">Contact Us</h2>
@@ -884,7 +1116,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-column">
@@ -894,9 +1125,9 @@
 
         <a href="#home"><span class="english">Home</span><span class="nepali">होम</span></a>
         <a href="#about"><span class="english">About Us</span><span class="nepali">हाम्रो बारेमा</span></a>
-        <a href="#mission"><span class="english">Mission & Vision</span><span class="nepali">मिशन र भिजन</span></a>
         <a href="#objectives"><span class="english">Objectives</span><span class="nepali">उद्देश्यहरू</span></a>
-        <a href="#team"><span class="english">Team</span><span class="nepali">कार्यसमिति</span></a>
+        <a href="#leadership"><span class="english">Leadership</span><span class="nepali">नेतृत्व</span></a>
+        <a href="#social"><span class="english">Connect</span><span class="nepali">जोडिनुहोस्</span></a>
         <a href="#contact"><span class="english">Contact</span><span class="nepali">सम्पर्क</span></a>
       </div>
 
@@ -917,12 +1148,10 @@
         <p class="english">Follow us at</p>
         <p class="nepali">हामीलाई यहाँ फलो गर्नुहोस्</p>
 
-        <div class="social-links">
-          <a href="https://facebook.com/shalomgurufoundation" target="_blank">Facebook</a>
-          <a href="https://instagram.com/shalomgurufoundation" target="_blank">Instagram</a>
-          <a href="https://tiktok.com/@shalomgurufoundation" target="_blank">TikTok</a>
-          <a href="https://youtube.com/@shalomgurufoundation" target="_blank">YouTube</a>
-        </div>
+        <a href="https://facebook.com/shalomgurufoundation" target="_blank">Facebook</a>
+        <a href="https://instagram.com/shalomgurufoundation" target="_blank">Instagram</a>
+        <a href="https://tiktok.com/@shalomgurufoundation" target="_blank">TikTok</a>
+        <a href="https://youtube.com/@shalomgurufoundation" target="_blank">YouTube</a>
       </div>
     </div>
 
@@ -935,23 +1164,14 @@
     </div>
   </footer>
 
-  <!-- FLOATING DONATE -->
   <div class="floating-donate">
-    <button onclick="showDonationMessage()">
+    <a href="donate.html">
       <span class="english">Donate</span>
       <span class="nepali">दान</span>
-    </button>
+    </a>
   </div>
 
   <script>
-    function showDonationMessage() {
-      if (document.body.classList.contains("nepali-mode")) {
-        alert("दान सेवा चाँडै खुल्नेछ। शालोम गुरु फाउन्डेशनलाई सहयोग गर्नुभएकोमा धन्यवाद।");
-      } else {
-        alert("Donation support is coming soon. Thank you for supporting Shalom Guru Foundation.");
-      }
-    }
-
     function toggleLanguage() {
       document.body.classList.toggle("nepali-mode");
       const langBtn = document.getElementById("langToggle");
@@ -973,6 +1193,16 @@
         menu.style.flexDirection = "column";
         menu.style.alignItems = "center";
         menu.style.paddingBottom = "16px";
+      }
+    }
+
+    function showSubmitMessage(event) {
+      event.preventDefault();
+
+      if (document.body.classList.contains("nepali-mode")) {
+        alert("धन्यवाद। तपाईंको जानकारी सफलतापूर्वक पेश गरिएको छ।");
+      } else {
+        alert("Thank you. Your request has been submitted successfully.");
       }
     }
   </script>
