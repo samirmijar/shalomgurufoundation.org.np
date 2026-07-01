@@ -615,12 +615,14 @@
 
     .contact-box {
       background: #f8fff6;
-      padding: 30px;
+      padding: 30px 36px;
       border-radius: 18px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
-      max-width: 850px;
+      max-width: 550px;
       margin: auto;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     .contact-box p {
@@ -632,16 +634,51 @@
     .contact-row {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .contact-row img {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
       flex-shrink: 0;
+    }
+
+    .contact-row span {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .footer-social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      margin: 0;
+      padding: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .footer-social-icons a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+
+    .footer-social-icons img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
     }
 
     .contact-link {
@@ -1300,9 +1337,18 @@
       </p>
 
       <div class="contact-box">
-        <p class="contact-row"><img src="png.images/mail-download.gif" alt="Email icon"><strong>Email:</strong> <a href="mailto:shalomgurufoundation@gmail.com" class="contact-link">shalomgurufoundation@gmail.com</a></p>
-        <p class="contact-row"><img src="png.images/call.gif" alt="Phone icon"><strong>Phone:</strong> <a href="tel:+9779766106675" class="contact-link">+977 9766106675</a></p>
-        <p class="contact-row"><img src="png.images/giphy.gif" alt="Location icon"><strong>Address:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Likhu-3,+Nuwakot,+Nepal" target="_blank" rel="noopener" class="contact-link">Likhu-3, Nuwakot, Nepal</a></p>
+        <div class="contact-row">
+          <img src="png.images/mail-Download.gif" alt="Email icon">
+          <span><strong>Email:</strong> <a href="mailto:shalomgurufoundation@gmail.com" class="contact-link">shalomgurufoundation@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <img src="png.images/Call.gif" alt="Phone icon">
+          <span><strong>Phone:</strong> <a href="tel:+9779766106675" class="contact-link">+977 9766106675</a></span>
+        </div>
+        <div class="contact-row">
+          <img src="png.images/giphy.gif" alt="Location icon">
+          <span><strong>Address:</strong> <a href="https://maps.app.goo.gl/koxKoYDAQ6fTADycA" target="_blank" rel="noopener" class="contact-link">Likhu-3, Nuwakot, Nepal</a></span>
+        </div>
       </div>
     </div>
   </section>
@@ -1329,19 +1375,30 @@
 
         <a href="mailto:shalomgurufoundation@gmail.com">shalomgurufoundation@gmail.com</a>
         <a href="tel:+9779766106675">+977 9766106675</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Likhu-3,+Nuwakot,+Nepal" target="_blank" rel="noopener">Likhu-3, Nuwakot, Nepal</a>
+        <a href="https://maps.app.goo.gl/koxKoYDAQ6fTADycA" target="_blank" rel="noopener">Likhu-3, Nuwakot, Nepal</a>
       </div>
 
       <div class="footer-column">
         <img src="png.images/logopng.png" alt="Shalom Guru Foundation Logo" class="footer-logo">
 
-        <p class="english">Follow us at</p>
-        <p class="nepali">हामीलाई यहाँ फलो गर्नुहोस्</p>
+        <div class="footer-title english" style="margin-top:10px;">FOLLOW US</div>
+        <div class="footer-title nepali" style="margin-top:10px;">फलो गर्नुहोस्</div>
+        <div class="footer-line"></div>
 
-        <a href="https://facebook.com/shalomgurufoundation" target="_blank">Facebook</a>
-        <a href="https://instagram.com/shalomgurufoundation" target="_blank">Instagram</a>
-        <a href="https://tiktok.com/@shalomgurufoundation" target="_blank">TikTok</a>
-        <a href="https://youtube.com/@shalomgurufoundation" target="_blank">YouTube</a>
+        <div class="footer-social-icons">
+          <a href="https://facebook.com/shalomgurufoundation" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="png.images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://instagram.com/shalomgurufoundation" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="png.images/insta.png" alt="Instagram">
+          </a>
+          <a href="https://tiktok.com/@shalomgurufoundation" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="png.images/tiktok.png" alt="TikTok">
+          </a>
+          <a href="https://youtube.com/@shalomgurufoundation" target="_blank" rel="noopener" aria-label="YouTube">
+            <img src="png.images/youtube.png" alt="YouTube">
+          </a>
+        </div>
       </div>
     </div>
 
