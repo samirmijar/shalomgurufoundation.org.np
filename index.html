@@ -340,6 +340,81 @@
       background: #f4fbf5;
     }
 
+    .project-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    .project-badge.done { background: #dcfce7; color: #15803d; }
+    .project-badge.ongoing { background: #fef9c3; color: #a16207; }
+    .project-badge.upcoming { background: #e0f2fe; color: #0369a1; }
+
+    .tuition-locations {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tuition-location-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .loc-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .loc-dot.active { background: #16a34a; }
+    .loc-dot.soon {
+      background: transparent;
+      border: 2px dashed #f59e0b;
+    }
+
+    .loc-active { color: #15803d; }
+    .loc-soon { color: #b45309; }
+
+    .tuition-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tuition-photo-grid .tp-item {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+
+    .tuition-photo-grid .tp-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .tuition-photo-grid .tp-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .tp-item.tp-wide {
+      grid-column: span 2;
+    }
+
     .gallery-placeholder {
       text-align: center;
       max-width: 850px;
@@ -554,13 +629,39 @@
       object-fit: contain;
     }
 
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 28px;
+      align-items: start;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    @media (max-width: 760px) {
+      .contact-connect-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .connect-box {
       background: #f8f8f8;
       padding: 35px;
       border-radius: 25px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      max-width: 1000px;
-      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .connect-box.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .connect-box form select,
@@ -663,7 +764,7 @@
       justify-content: center;
       width: 46px;
       height: 46px;
-      background: rgba(255,255,255,0.08);
+      background: #ffffff;
       border-radius: 12px;
       margin: 0;
       padding: 8px;
@@ -671,7 +772,7 @@
     }
 
     .footer-social-icons a:hover {
-      background: rgba(255,255,255,0.2);
+      background: #f0f0f0;
       transform: translateY(-3px);
     }
 
@@ -1209,39 +1310,68 @@
       <h2 class="section-title nepali">हाम्रो काम</h2>
 
       <p class="section-subtitle english">
-        We are preparing meaningful activities for the future growth of our foundation and community support.
+        Real work done on the ground — from rural communities to classroom support.
       </p>
       <p class="section-subtitle nepali">
-        हाम्रो फाउन्डेशन र समुदायको विकासका लागि अर्थपूर्ण आगामी कार्यक्रमहरू तयारी भइरहेको छ।
+        जमिनमा गरिएका वास्तविक कार्यहरू — ग्रामीण समुदायदेखि कक्षाकोठा सहयोगसम्म।
       </p>
 
       <div class="projects-grid">
         <div class="project-card">
-          <h3 class="english">Educational Support</h3>
-          <h3 class="nepali">शैक्षिक सहयोग</h3>
-          <p class="english">Support for students and community learning activities.</p>
-          <p class="nepali">विद्यार्थी सहयोग तथा सामुदायिक सिकाइ कार्यक्रमहरू।</p>
+          <span class="project-badge done english">✔ Completed</span>
+          <span class="project-badge done nepali">✔ सम्पन्न</span>
+          <h3 class="english">🎒 School Bag & Copy Distribution</h3>
+          <h3 class="nepali">🎒 स्कूल ब्याग तथा कापी वितरण</h3>
+          <p class="english">Successfully distributed school bags and copies to students in rural areas of Likhu-3, Nuwakot — helping children access education with the supplies they need.</p>
+          <p class="nepali">लिखु-३, नुवाकोटको ग्रामीण क्षेत्रका विद्यार्थीहरूलाई स्कूल ब्याग तथा कापी सफलतापूर्वक वितरण गरियो।</p>
         </div>
 
         <div class="project-card">
-          <h3 class="english">Health Awareness</h3>
-          <h3 class="nepali">स्वास्थ्य जनचेतना</h3>
-          <p class="english">Health-related awareness and support programs.</p>
-          <p class="nepali">स्वास्थ्यसम्बन्धी जनचेतना तथा सहयोग कार्यक्रमहरू।</p>
+          <span class="project-badge ongoing english">▶ Ongoing</span>
+          <span class="project-badge ongoing nepali">▶ जारी</span>
+          <h3 class="english">📚 Free Tuition Classes</h3>
+          <h3 class="nepali">📚 निःशुल्क ट्युसन कक्षा</h3>
+          <p class="english">Free tuition classes providing quality learning support to children at no cost — currently serving <strong>15–20 students</strong> in the community.</p>
+          <p class="nepali">समुदायका बालबालिकाहरूलाई निःशुल्क गुणस्तरीय शिक्षा प्रदान गरिँदैछ — हाल <strong>१५–२०</strong> विद्यार्थीहरू अध्ययनरत छन्।</p>
+
+          <div class="tuition-locations">
+            <div class="tuition-location-row">
+              <span class="loc-dot active"></span>
+              <span class="loc-active english">✔ Likhu-3 — Active (15–20 students)</span>
+              <span class="loc-active nepali">✔ लिखु-३ — सक्रिय (१५–२० विद्यार्थी)</span>
+            </div>
+            <div class="tuition-location-row">
+              <span class="loc-dot soon"></span>
+              <span class="loc-soon english">🔜 Likhu-1 — Coming Soon</span>
+              <span class="loc-soon nepali">🔜 लिखु-१ — चाँडै सुरु हुँदैछ</span>
+            </div>
+          </div>
+
+          <div class="tuition-photo-grid" id="tuitionPhotoGrid">
+            <div class="tp-item tp-wide"><img src="png.images/tuition1.jpg" alt="Free tuition class Likhu-3"></div>
+            <div class="tp-item"><img src="png.images/tuition2.jpg" alt="Free tuition class Likhu-3"></div>
+            <div class="tp-item"><img src="png.images/tuition3.jpg" alt="Free tuition class Likhu-3"></div>
+            <div class="tp-item tp-wide"><img src="png.images/tuition4.jpg" alt="Free tuition class Likhu-3"></div>
+            <div class="tp-item"><img src="png.images/tuition5.jpg" alt="Free tuition class Likhu-3"></div>
+          </div>
         </div>
 
         <div class="project-card">
-          <h3 class="english">Environmental Campaigns</h3>
-          <h3 class="nepali">वातावरणीय अभियान</h3>
-          <p class="english">Cleaning drives, tree plantation, and local awareness campaigns.</p>
+          <span class="project-badge upcoming english">◎ Upcoming</span>
+          <span class="project-badge upcoming nepali">◎ आगामी</span>
+          <h3 class="english">🏥 Health Awareness</h3>
+          <h3 class="nepali">🏥 स्वास्थ्य जनचेतना</h3>
+          <p class="english">Health-related awareness camps and support programs planned for the community.</p>
+          <p class="nepali">समुदायका लागि स्वास्थ्यसम्बन्धी जनचेतना शिविर तथा सहयोग कार्यक्रमहरू।</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-badge upcoming english">◎ Upcoming</span>
+          <span class="project-badge upcoming nepali">◎ आगामी</span>
+          <h3 class="english">🌱 Environmental Campaigns</h3>
+          <h3 class="nepali">🌱 वातावरणीय अभियान</h3>
+          <p class="english">Cleaning drives, tree plantation, and local awareness campaigns coming soon.</p>
           <p class="nepali">सरसफाइ, वृक्षारोपण तथा स्थानीय जनचेतना अभियानहरू।</p>
-        </div>
-
-        <div class="project-card">
-          <h3 class="english">Skill Development</h3>
-          <h3 class="nepali">सीप विकास</h3>
-          <p class="english">Training and support to help create better opportunities.</p>
-          <p class="nepali">रोजगारका अवसर बढाउन तालिम तथा सहयोग कार्यक्रमहरू।</p>
         </div>
       </div>
     </div>
@@ -1287,73 +1417,61 @@
   </div>
 
 
-  <section class="contact" id="connect">
-    <div class="container">
-      <h2 class="section-title english">Connect With Us</h2>
-      <h2 class="section-title nepali">हामीसँग जोडिनुहोस्</h2>
-
-      <p class="section-subtitle english">
-        Send us a message, become a volunteer, or register to receive updates.
-      </p>
-      <p class="section-subtitle nepali">
-        हामीलाई सन्देश पठाउनुहोस्, स्वयंसेवक बन्नुहोस्, वा अपडेट पाउन दर्ता गर्नुहोस्।
-      </p>
-
-      <div class="connect-box">
-        <form id="connectForm" action="https://formcarry.com/s/ddBBVdJREYF" method="POST">
-          <select name="Request Type">
-            <option value="">Select request type</option>
-            <option value="Send a Message">Send a Message</option>
-            <option value="Become a Volunteer">Become a Volunteer</option>
-            <option value="Register to Receive Updates">Register to Receive Updates</option>
-          </select>
-
-          <input type="text" name="Full Name" placeholder="Full Name" required>
-          <input type="email" name="Email Address" placeholder="Email Address" required>
-          <input type="text" name="Phone Number" placeholder="Phone Number">
-          <textarea name="Message" placeholder="Write your message or tell us how you want to help" required></textarea>
-
-          <button type="submit" id="connectSubmitBtn">
-            <span class="english">Submit</span>
-            <span class="nepali">पेश गर्नुहोस्</span>
-          </button>
-
-          <p id="connectFormStatus" class="form-status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <section class="contact" id="contact">
     <div class="container">
-      <h2 class="section-title english">Contact Us</h2>
-      <h2 class="section-title nepali">सम्पर्क गर्नुहोस्</h2>
+      <h2 class="section-title english">Contact & Connect</h2>
+      <h2 class="section-title nepali">सम्पर्क र जोडिनुहोस्</h2>
 
       <p class="section-subtitle english">
-        Reach out to us for support, collaboration, volunteering, or community service.
+        Reach out to us for support, volunteering, collaboration, or simply send us a message.
       </p>
       <p class="section-subtitle nepali">
-        सहयोग, सहकार्य, स्वयंसेवा वा सामुदायिक सेवाका लागि हामीसँग सम्पर्क गर्नुहोस्।
+        सहयोग, स्वयंसेवा, सहकार्य वा सन्देशका लागि हामीसँग सम्पर्क गर्नुहोस्।
       </p>
 
-      <div class="contact-box">
-        <div class="contact-row">
-          <img src="png.images/mail-download.gif" alt="Email icon">
-          <span><strong>Email:</strong> <a href="mailto:shalomgurufoundation@gmail.com" class="contact-link">shalomgurufoundation@gmail.com</a></span>
+      <div class="contact-connect-grid">
+        <div class="contact-box">
+          <div class="contact-row">
+            <img src="png.images/mail-Download.gif" alt="Email icon">
+            <span><strong>Email:</strong> <a href="mailto:shalomgurufoundation@gmail.com" class="contact-link">shalomgurufoundation@gmail.com</a></span>
+          </div>
+          <div class="contact-row">
+            <img src="png.images/Call.gif" alt="Phone icon">
+            <span><strong>Phone:</strong> <a href="tel:+9779766106675" class="contact-link">+977 9766106675</a></span>
+          </div>
+          <div class="contact-row">
+            <img src="png.images/giphy.gif" alt="Location icon">
+            <span><strong>Address:</strong> <a href="https://maps.app.goo.gl/koxKoYDAQ6fTADycA" target="_blank" rel="noopener" class="contact-link">Likhu-3, Nuwakot, Nepal</a></span>
+          </div>
         </div>
-        <div class="contact-row">
-          <img src="png.images/call.gif" alt="Phone icon">
-          <span><strong>Phone:</strong> <a href="tel:+9779766106675" class="contact-link">+977 9766106675</a></span>
-        </div>
-        <div class="contact-row">
-          <img src="png.images/giphy.gif" alt="Location icon">
-          <span><strong>Address:</strong> <a href="https://maps.app.goo.gl/koxKoYDAQ6fTADycA" target="_blank" rel="noopener" class="contact-link">Likhu-3, Nuwakot, Nepal</a></span>
+
+        <div class="connect-box">
+          <form id="connectForm" action="https://formcarry.com/s/ddBBVdJREYF" method="POST">
+            <select name="Request Type">
+              <option value="">Select request type</option>
+              <option value="Send a Message">Send a Message</option>
+              <option value="Become a Volunteer">Become a Volunteer</option>
+              <option value="Register to Receive Updates">Register to Receive Updates</option>
+            </select>
+
+            <input type="text" name="Full Name" placeholder="Full Name" required>
+            <input type="email" name="Email Address" placeholder="Email Address" required>
+            <input type="text" name="Phone Number" placeholder="Phone Number">
+            <textarea name="Message" placeholder="Write your message or tell us how you want to help" required></textarea>
+
+            <button type="submit" id="connectSubmitBtn">
+              <span class="english">Submit</span>
+              <span class="nepali">पेश गर्नुहोस्</span>
+            </button>
+
+            <p id="connectFormStatus" class="form-status"></p>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
+
     <div class="footer-grid">
       <div class="footer-column">
         <div class="footer-title english">MENU</div>
@@ -1364,7 +1482,7 @@
         <a href="#about"><span class="english">About Us</span><span class="nepali">हाम्रो बारेमा</span></a>
         <a href="#objectives"><span class="english">Objectives</span><span class="nepali">उद्देश्यहरू</span></a>
         <a href="#leadership"><span class="english">Leadership</span><span class="nepali">नेतृत्व</span></a>
-        <a href="#social"><span class="english">Connect</span><span class="nepali">जोडिनुहोस्</span></a>
+        <a href="#contact"><span class="english">Connect</span><span class="nepali">जोडिनुहोस्</span></a>
         <a href="#contact"><span class="english">Contact</span><span class="nepali">सम्पर्क</span></a>
       </div>
 
@@ -1387,16 +1505,16 @@
 
         <div class="footer-social-icons">
           <a href="https://facebook.com/shalomgurufoundation" target="_blank" rel="noopener" aria-label="Facebook">
-            <img src="png.images/fb.png" alt="Facebook">
+            <img src="png.images/facebook.png" alt="Facebook">
           </a>
           <a href="https://instagram.com/shalomgurufoundation" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="png.images/ig.png" alt="Instagram">
+            <img src="png.images/insta.png" alt="Instagram">
           </a>
           <a href="https://tiktok.com/@shalomgurufoundation" target="_blank" rel="noopener" aria-label="TikTok">
-            <img src="png.images/tt.png" alt="TikTok">
+            <img src="png.images/tiktok.png" alt="TikTok">
           </a>
           <a href="https://youtube.com/@shalomgurufoundation" target="_blank" rel="noopener" aria-label="YouTube">
-            <img src="png.images/yt.png" alt="YouTube">
+            <img src="png.images/youtube.png" alt="YouTube">
           </a>
         </div>
       </div>
@@ -1492,16 +1610,25 @@
     })();
 
     (function () {
-      const grid = document.getElementById("galleryGrid");
-      if (!grid) return;
-
-      const items = Array.from(grid.querySelectorAll(".gallery-item img"));
       const overlay = document.getElementById("lightboxOverlay");
       const overlayImg = document.getElementById("lightboxImg");
       const closeBtn = document.getElementById("lightboxClose");
       const prevBtn = document.getElementById("lightboxPrev");
       const nextBtn = document.getElementById("lightboxNext");
+
+      // Collect all lightbox-able images from both grids
+      let items = [];
       let currentIndex = 0;
+
+      function buildItems() {
+        const galleryImgs = Array.from(document.querySelectorAll("#galleryGrid .gallery-item img"));
+        const tuitionImgs = Array.from(document.querySelectorAll("#tuitionPhotoGrid .tp-item img"));
+        items = [...galleryImgs, ...tuitionImgs];
+        items.forEach((img, i) => {
+          img.style.cursor = "pointer";
+          img.addEventListener("click", () => open(i));
+        });
+      }
 
       function open(index) {
         currentIndex = index;
@@ -1521,10 +1648,6 @@
         overlayImg.alt = items[currentIndex].alt;
       }
 
-      items.forEach((img, i) => {
-        img.addEventListener("click", () => open(i));
-      });
-
       closeBtn.addEventListener("click", close);
       prevBtn.addEventListener("click", () => show(-1));
       nextBtn.addEventListener("click", () => show(1));
@@ -1539,6 +1662,23 @@
         if (e.key === "ArrowLeft") show(-1);
         if (e.key === "ArrowRight") show(1);
       });
+
+      buildItems();
+    })();
+
+    // Connect With Us fade-in animation
+    (function () {
+      const box = document.querySelector(".connect-box");
+      if (!box) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            box.classList.add("visible");
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(box);
     })();
 
     (function () {
