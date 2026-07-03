@@ -13,6 +13,11 @@
       scroll-behavior: smooth;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
     body {
       background: #f7fbf8;
       color: #222;
@@ -140,6 +145,24 @@
       grid-template-columns: 1.2fr 1fr;
       gap: 40px;
       align-items: center;
+    }
+
+    .hero-slogan {
+      display: inline-block;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 600;
+      color: #175c2e;
+      background: rgba(11, 61, 46, 0.07);
+      border-left: 4px solid #84b94f;
+      padding: 10px 16px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .hero-slogan span {
+      display: block;
     }
 
     .hero h2 {
@@ -1027,6 +1050,11 @@
         <h2 class="english">Shalom Guru Foundation</h2>
         <h2 class="nepali">शालोम गुरु फाउन्डेशन</h2>
 
+        <div class="hero-slogan">
+          <span class="english">🕊️ Humanity is our Religion &nbsp;|&nbsp; Service is our Mission</span>
+          <span class="nepali">🕊️ मानवता नै हाम्रो धर्म &nbsp;|&nbsp; सेवा नै हाम्रो मिशन</span>
+        </div>
+
         <p class="english">
           Join our community to help make <span>Nepal</span> better through service, compassion, education, and social support.
         </p>
@@ -1490,6 +1518,11 @@
         <div class="footer-title english">CONTACT</div>
         <div class="footer-title nepali">सम्पर्क</div>
         <div class="footer-line"></div>
+
+        <a href="mailto:shalomgurufoundation@gmail.com">shalomgurufoundation@gmail.com</a>
+        <a href="tel:+9779766106675">+977 9766106675</a>
+        <a href="https://maps.app.goo.gl/koxKoYDAQ6fTADycA" target="_blank" rel="noopener">Likhu-3, Nuwakot, Nepal</a>
+      </div>
 
       <div class="footer-column">
         <img src="png.images/logopng.png" alt="Shalom Guru Foundation Logo" class="footer-logo">
